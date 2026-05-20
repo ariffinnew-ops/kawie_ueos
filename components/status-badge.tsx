@@ -3,7 +3,7 @@
 export default function StatusBadge() {
   return (
     <div
-      className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs font-mono tracking-widest uppercase"
+      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs sm:text-sm font-mono tracking-widest uppercase"
       style={{
         borderColor: "var(--border-bright)",
         background: "rgba(0,229,212,0.05)",

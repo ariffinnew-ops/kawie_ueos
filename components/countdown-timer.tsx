@@ -39,9 +39,9 @@ interface UnitBoxProps {
 
 function UnitBox({ value, label }: UnitBoxProps) {
   return (
-    <div className="flex flex-col items-center gap-1">
+    <div className="flex flex-col items-center gap-0.5">
       <div
-        className="w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center rounded-lg border font-mono text-2xl sm:text-3xl font-bold"
+        className="w-14 sm:w-16 h-14 sm:h-16 flex items-center justify-center rounded-md border font-mono text-xl sm:text-2xl font-bold"
         style={{
           borderColor: "var(--border-bright)",
           background: "rgba(0,229,212,0.04)",
@@ -53,7 +53,7 @@ function UnitBox({ value, label }: UnitBoxProps) {
         {pad(value)}
       </div>
       <span
-        className="text-xs uppercase tracking-widest font-mono"
+        className="text-xs sm:text-sm uppercase tracking-wider font-mono"
         style={{ color: "var(--muted-foreground)" }}
       >
         {label}
@@ -76,7 +76,7 @@ export default function CountdownTimer() {
 
   if (!mounted) {
     return (
-      <div className="flex gap-4" aria-label="Countdown timer loading">
+      <div className="flex gap-2 sm:gap-2.5" aria-label="Countdown timer loading">
         {["Days", "Hours", "Mins", "Secs"].map((label) => (
           <UnitBox key={label} value={0} label={label} />
         ))}
@@ -86,7 +86,7 @@ export default function CountdownTimer() {
 
   return (
     <div
-      className="flex gap-3 sm:gap-4"
+      className="flex gap-2 sm:gap-2.5"
       role="timer"
       aria-label="Countdown to launch"
       aria-live="polite"

@@ -1,0 +1,31 @@
+---
+description: Commit and push when user confirms with y; skip on n/no
+alwaysApply: true
+---
+
+# Git commit on y / skip on n
+
+After completing a task or when the user asks to save work, offer a short summary and ask:
+
+**Commit and push? (y / n)**
+
+## When the user replies **y**, **yes**, or **Y**
+
+1. Run in parallel: `git status`, `git diff` (staged + unstaged), `git log -3 --oneline`
+2. Do **not** commit secrets (`.env`, credentials, keys)
+3. Stage relevant files, commit with a concise message (why, not just what)
+4. Push to the current branch: `git push` (use `-u origin HEAD` only if upstream is not set)
+5. Report commit hash and push result
+
+Follow the user's git safety rules: no force push to main/master, no `--no-verify`, no config changes, no amend unless explicitly allowed.
+
+## When the user replies **n**, **no**, **N**, or **no**
+
+- Do **not** commit or push
+- Acknowledge briefly and stop
+
+## Notes
+
+- A lone **y** or **n** in a message after work counts as confirmation
+- Do not commit or push without an explicit **y** (or yes)
+- Do not ask repeatedly in the same turn if the user already said y or n
