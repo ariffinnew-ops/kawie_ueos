@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Kawie Digital - Dark Tech Theme (always dark) */
+  --background: #090d0d;
+  --surface: #0f1a1a;
+  --foreground: #e8f5f5;
+  --muted-foreground: #5a8a8a;
+  --primary: #00e5d4;
+  --primary-glow: #00e5d480;
+  --primary-dim: #00b4a8;
+  --border: #1a3030;
+  --border-bright: #00e5d430;
+  --card: #0d1c1c;
+  --card-foreground: #e8f5f5;
+  --popover: #0d1c1c;
+  --popover-foreground: #e8f5f5;
+  --primary-foreground: #090d0d;
+  --secondary: #0f1a1a;
+  --secondary-foreground: #e8f5f5;
+  --muted: #0f1a1a;
+  --accent: #00e5d4;
+  --accent-foreground: #090d0d;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --input: #1a3030;
+  --ring: #00e5d480;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-surface: var(--surface);
+  --color-primary-glow: var(--primary-glow);
+  --color-primary-dim: var(--primary-dim);
+  --color-border-bright: var(--border-bright);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
