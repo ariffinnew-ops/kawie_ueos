@@ -4,9 +4,9 @@ import { useState } from "react"
 import Link from "next/link"
 
 const NAV_LINKS = [
-  { label: "Platform", href: "#" },
-  { label: "Solutions", href: "#" },
-  { label: "Training", href: "#" },
+  { label: "Platform", href: "/product" },
+  { label: "Solutions", href: "/#industries" },
+  { label: "Training", href: "/#training" },
   { label: "Contact", href: "/contact" },
 ]
 
@@ -60,9 +60,9 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <a
-            href="mailto:admin@kawie-digital.com"
-            className="inline-flex items-center justify-center font-sans font-medium text-sm transition-all duration-200"
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center font-sans font-medium text-sm transition-all duration-200 no-underline"
             style={{
               background: "#00c6d7",
               color: "#0a0c10",
@@ -81,7 +81,7 @@ export default function Navbar() {
             }}
           >
             Book a Demo
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -128,18 +128,19 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="mailto:admin@kawie-digital.com"
-            className="inline-flex items-center justify-center font-sans font-medium text-sm mt-2"
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center font-sans font-medium text-sm mt-2 no-underline"
             style={{
               background: "#00c6d7",
               color: "#0a0c10",
               borderRadius: 999,
               padding: "10px 22px",
             }}
+            onClick={() => setMobileOpen(false)}
           >
             Book a Demo
-          </a>
+          </Link>
         </div>
       )}
     </header>
