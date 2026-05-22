@@ -1,46 +1,111 @@
 import Image from "next/image"
-import Link from "next/link"
+
+const columnHeadingStyle: React.CSSProperties = {
+  color: "#ffffff",
+  fontSize: 14,
+  fontWeight: 700,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  marginBottom: 20,
+  fontFamily: "var(--font-dm-sans), 'DM Sans', system-ui, sans-serif",
+}
+
+const linkStyle: React.CSSProperties = {
+  color: "#a0a8bc",
+  fontSize: 15,
+  lineHeight: 2.2,
+  fontFamily: "var(--font-dm-sans), 'DM Sans', system-ui, sans-serif",
+  textDecoration: "none",
+  transition: "color 0.2s ease",
+}
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      style={linkStyle}
+      onMouseEnter={(e) => {
+        ;(e.currentTarget as HTMLElement).style.color = "#00c6d7"
+      }}
+      onMouseLeave={(e) => {
+        ;(e.currentTarget as HTMLElement).style.color = "#a0a8bc"
+      }}
+    >
+      {children}
+    </a>
+  )
+}
 
 export default function Footer() {
   return (
     <footer
-      className="w-full"
-      style={{ borderTop: "1px solid rgba(255,255,255,0.10)", background: "#0d1018" }}
+      className="w-full relative"
+      style={{
+        background: "#0d1117",
+        borderTop: "1px solid rgba(0,198,215,0.2)",
+        paddingTop: 80,
+        paddingBottom: 0,
+      }}
     >
+      {/* Top glow line */}
       <div
-        className="mx-auto px-6 py-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4"
-        style={{ maxWidth: 1160 }}
+        aria-hidden
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 1,
+          background: "linear-gradient(90deg, transparent, #00c6d7, transparent)",
+        }}
+      />
+
+      <div
+        className="mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+        style={{ maxWidth: 1160, gap: 48, paddingBottom: 48 }}
       >
         {/* Col 1 — Brand */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
           <div className="flex items-center gap-3">
             <Image
               src="/kawie-logo.jpg"
               alt="Kawie Digital Solutions"
-              width={40}
-              height={40}
+              width={48}
+              height={48}
               className="rounded-lg shrink-0"
             />
             <span
-              className="text-white leading-tight"
               style={{
                 fontFamily: "var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif",
-                fontWeight: 700,
-                fontSize: 16,
+                fontWeight: 600,
+                fontSize: 15,
+                color: "#ffffff",
+                lineHeight: 1.3,
               }}
             >
               Kawie Digital Solutions Sdn Bhd
             </span>
           </div>
-          <p className="font-sans leading-relaxed" style={{ color: "var(--text-secondary)", fontSize: 15 }}>
+          <p
+            className="font-sans"
+            style={{
+              color: "#a0a8bc",
+              fontSize: 14,
+              lineHeight: 1.8,
+              marginTop: 12,
+            }}
+          >
             Kawie Digital Solutions Sdn Bhd — Unified Enterprise Operating System for modern operations teams.
           </p>
           <span
-            className="inline-flex items-center text-xs font-sans font-medium px-3 py-1 self-start"
+            className="font-sans self-start"
             style={{
-              background: "rgba(0,198,215,0.12)",
               color: "#00c6d7",
-              borderRadius: 999,
+              fontSize: 12,
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              marginTop: 16,
             }}
           >
             Authorised Agent &amp; Training Centre
@@ -48,9 +113,9 @@ export default function Footer() {
         </div>
 
         {/* Col 2 — Platform */}
-        <div className="flex flex-col gap-4">
-          <h4 className="font-sans font-medium text-sm text-white">Platform</h4>
-          <ul className="flex flex-col gap-2.5">
+        <div className="flex flex-col">
+          <h4 style={columnHeadingStyle}>Platform</h4>
+          <ul className="flex flex-col" style={{ margin: 0, padding: 0, listStyle: "none" }}>
             {[
               "UEOS Overview",
               "PMS — Projects",
@@ -59,24 +124,16 @@ export default function Footer() {
               "PCM — Budget",
             ].map((item) => (
               <li key={item}>
-                <a
-                  href="#"
-                  className="font-sans text-sm transition-colors duration-200"
-                  style={{ color: "#555d70" }}
-                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
-                  onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
-                >
-                  {item}
-                </a>
+                <FooterLink href="#">{item}</FooterLink>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Col 3 — Industries */}
-        <div className="flex flex-col gap-4">
-          <h4 className="font-sans font-medium text-sm text-white">Industries</h4>
-          <ul className="flex flex-col gap-2.5">
+        <div className="flex flex-col">
+          <h4 style={columnHeadingStyle}>Industries</h4>
+          <ul className="flex flex-col" style={{ margin: 0, padding: 0, listStyle: "none" }}>
             {[
               "Oil & Gas",
               "Construction",
@@ -85,57 +142,37 @@ export default function Footer() {
               "SMEs",
             ].map((item) => (
               <li key={item}>
-                <a
-                  href="#"
-                  className="font-sans text-sm transition-colors duration-200"
-                  style={{ color: "#555d70" }}
-                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
-                  onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
-                >
-                  {item}
-                </a>
+                <FooterLink href="#">{item}</FooterLink>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Col 4 — Company */}
-        <div className="flex flex-col gap-4">
-          <h4 className="font-sans font-medium text-sm text-white">Company</h4>
-          <ul className="flex flex-col gap-2.5">
+        <div className="flex flex-col">
+          <h4 style={columnHeadingStyle}>Company</h4>
+          <ul className="flex flex-col" style={{ margin: 0, padding: 0, listStyle: "none" }}>
             <li>
-              <a href="#" className="font-sans text-sm transition-colors duration-200" style={{ color: "#555d70" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
-              >
-                Training — UEOS-APOG
-              </a>
+              <FooterLink href="#">Training — UEOS-APOG</FooterLink>
             </li>
             <li>
-              <a href="mailto:admin@kawie-digital.com" className="font-sans text-sm transition-colors duration-200" style={{ color: "#555d70" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
-              >
-                admin@kawie-digital.com
-              </a>
+              <FooterLink href="mailto:admin@kawie-digital.com">admin@kawie-digital.com</FooterLink>
             </li>
             <li>
-              <a href="tel:+60112173 4434" className="font-sans text-sm transition-colors duration-200" style={{ color: "#555d70" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
-              >
-                +6011-2173 4434
-              </a>
+              <FooterLink href="tel:+601121734434">+6011-2173 4434</FooterLink>
             </li>
             <li>
               <a
                 href="https://whatsapp.com/channel/0029Vb76GGKQuJCSZQvax3v"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-sm transition-colors duration-200"
-                style={{ color: "#555d70" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
+                style={linkStyle}
+                onMouseEnter={(e) => {
+                  ;(e.currentTarget as HTMLElement).style.color = "#00c6d7"
+                }}
+                onMouseLeave={(e) => {
+                  ;(e.currentTarget as HTMLElement).style.color = "#a0a8bc"
+                }}
               >
                 WhatsApp Channel
               </a>
@@ -146,15 +183,22 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div
-        className="mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-2"
-        style={{ maxWidth: 1160, borderTop: "1px solid rgba(255,255,255,0.10)" }}
+        style={{
+          background: "#080a0f",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+        }}
       >
-        <p className="font-sans text-xs" style={{ color: "#555d70" }}>
-          &copy; 2026 Kawie Digital Solutions Sdn Bhd. All rights reserved.
-        </p>
-        <p className="font-sans text-xs" style={{ color: "#555d70" }}>
-          Powered by Next.js &middot; Supabase &middot; Vercel
-        </p>
+        <div
+          className="mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3"
+          style={{ maxWidth: 1160, padding: "20px 0" }}
+        >
+          <p className="font-sans text-center md:text-left" style={{ color: "#6b7590", fontSize: 13, margin: 0 }}>
+            &copy; 2026 Kawie Digital Solutions Sdn Bhd (202601019532). All rights reserved.
+          </p>
+          <p className="font-sans text-center md:text-right" style={{ color: "#6b7590", fontSize: 13, margin: 0 }}>
+            Powered by Next.js &middot; Supabase &middot; Vercel
+          </p>
+        </div>
       </div>
     </footer>
   )
