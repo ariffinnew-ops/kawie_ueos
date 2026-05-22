@@ -29,16 +29,19 @@ export default function HeroSection() {
       <StatusBadge />
 
       {/* Company name */}
-      <h1 className="text-[clamp(1.125rem,4.2vw,2.25rem)] font-bold tracking-tight text-foreground leading-tight whitespace-nowrap max-w-[95vw]">
+      <h1
+        className="text-[clamp(1.125rem,4.2vw,2.25rem)] font-semibold tracking-[0.08em] uppercase text-foreground leading-tight whitespace-nowrap max-w-[95vw]"
+        style={{ fontFamily: "var(--font-barlow), sans-serif" }}
+      >
         Kawie{" "}
         <span
-          className="font-extrabold"
+          className="font-bold"
           style={{ color: "var(--primary)", textShadow: "0 0 24px rgba(0,229,212,0.5)" }}
         >
           Digital
         </span>{" "}
-        Solution{" "}
-        <span className="tracking-[0.15em] uppercase text-muted-foreground font-mono font-semibold text-[0.72em]">
+        Solutions{" "}
+        <span className="font-medium tracking-[0.12em] text-muted-foreground">
           Sdn Bhd
         </span>
       </h1>
