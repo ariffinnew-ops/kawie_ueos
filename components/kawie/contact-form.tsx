@@ -2,24 +2,14 @@
 
 import { useState } from "react"
 
-const inputBase: React.CSSProperties = {
-  width: "100%",
-  background: "#080b14",
-  border: "1px solid rgba(255,255,255,0.12)",
-  borderRadius: 8,
-  padding: "14px 16px",
-  color: "#ffffff",
-  fontSize: 16,
-  fontFamily: "inherit",
-  outline: "none",
-  transition: "border-color 0.2s",
-}
+const inputClass =
+  "w-full bg-[#080b14] border rounded-lg px-4 py-3.5 text-[16px] text-white placeholder:text-[#555d70] outline-none transition-[border-color] duration-200"
 
 export default function ContactForm() {
   const [focused, setFocused] = useState<string | null>(null)
 
   const getBorder = (field: string) =>
-    focused === field ? "1px solid #00c6d7" : "1px solid rgba(255,255,255,0.12)"
+    focused === field ? "border-[#00c6d7]" : "border-white/12"
 
   return (
     <div className="w-full bg-[#0f1526] border border-white/10 rounded-[14px] p-10">
@@ -37,44 +27,38 @@ export default function ContactForm() {
         className="flex flex-col gap-5"
       >
         <div className="flex flex-col gap-1.5">
-          <label className="font-sans text-sm font-medium text-[#8892a8]">Full Name</label>
+          <label className="font-sans text-[15px] text-[#c8d0e0] font-medium">Full Name</label>
           <input
             type="text"
             name="name"
             placeholder="Your full name"
             required
-            style={{ ...inputBase, border: getBorder("name") }}
+            className={`${inputClass} ${getBorder("name")}`}
             onFocus={() => setFocused("name")}
             onBlur={() => setFocused(null)}
           />
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="font-sans text-sm font-medium text-[#8892a8]">Company Name</label>
+          <label className="font-sans text-[15px] text-[#c8d0e0] font-medium">Company Name</label>
           <input
             type="text"
             name="company"
             placeholder="Your company name"
             required
-            style={{ ...inputBase, border: getBorder("company") }}
+            className={`${inputClass} ${getBorder("company")}`}
             onFocus={() => setFocused("company")}
             onBlur={() => setFocused(null)}
           />
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="font-sans text-sm font-medium text-[#8892a8]">Industry</label>
+          <label className="font-sans text-[15px] text-[#c8d0e0] font-medium">Industry</label>
           <select
             name="industry"
             required
             defaultValue=""
-            className="text-[#8892a8]"
-            style={{
-              ...inputBase,
-              border: getBorder("industry"),
-              appearance: "none",
-              cursor: "pointer",
-            }}
+            className={`${inputClass} ${getBorder("industry")} appearance-none cursor-pointer text-[#8892a8]`}
             onFocus={() => setFocused("industry")}
             onBlur={() => setFocused(null)}
             onChange={(e) => {
@@ -106,13 +90,13 @@ export default function ContactForm() {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="font-sans text-sm font-medium text-[#8892a8]">Message</label>
+          <label className="font-sans text-[15px] text-[#c8d0e0] font-medium">Message</label>
           <textarea
             name="message"
             rows={5}
             placeholder="Tell us about your enquiry..."
             required
-            style={{ ...inputBase, border: getBorder("message"), resize: "vertical" }}
+            className={`${inputClass} ${getBorder("message")} resize-y`}
             onFocus={() => setFocused("message")}
             onBlur={() => setFocused(null)}
           />
@@ -120,7 +104,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="w-full font-sans font-medium text-base transition-all duration-200 mt-1"
+          className="w-full font-sans text-[16px] font-semibold transition-all duration-200 mt-1"
           style={{
             background: "#00c6d7",
             color: "#080b14",

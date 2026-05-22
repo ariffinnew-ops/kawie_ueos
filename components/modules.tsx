@@ -131,15 +131,7 @@ export default function Modules() {
                 {mod.features.map((f) => (
                   <li
                     key={f}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '8px',
-                      fontFamily: 'var(--font-dm-sans)',
-                      fontSize: '13px',
-                      color: 'var(--text-muted)',
-                      lineHeight: 1.5,
-                    }}
+                    className="flex items-start gap-2 text-[15px] text-[#c8d0e0] leading-loose"
                   >
                     <span style={{ color: mod.color, flexShrink: 0, marginTop: '1px' }}>→</span>
                     {f}

@@ -88,19 +88,12 @@ export default function ContactPage() {
           </div>
 
           {/* H1 */}
-          <h1
-            className="font-serif font-extrabold text-white text-balance mb-6"
-            style={{
-              fontSize: "clamp(52px, 8vw, 88px)",
-              letterSpacing: "-0.03em",
-              lineHeight: 1.05,
-            }}
-          >
+          <h1 className="font-serif font-extrabold text-white text-balance mb-6 text-6xl md:text-7xl tracking-tight leading-tight">
             Let&apos;s talk.
           </h1>
 
           {/* Description */}
-          <p className="font-sans font-light text-lg text-[#c8d0e0] leading-relaxed text-balance mx-auto max-w-[520px]">
+          <p className="font-sans font-light text-xl text-[#c8d0e0] text-balance mx-auto max-w-[520px]">
             Book a demo, request a proposal, or ask about the UEOS-APOG training program.
             We&apos;ll get back to you within 24 hours.
           </p>

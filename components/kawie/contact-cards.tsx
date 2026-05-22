@@ -26,7 +26,7 @@ export default function ContactCards() {
         </div>
         <div>
           <h3 className="text-xl text-white font-semibold mb-1.5">Join our WhatsApp Channel</h3>
-          <p className="font-sans text-lg text-[#c8d0e0] leading-relaxed">
+          <p className="font-sans text-[15px] text-[#c8d0e0] leading-relaxed">
             Get updates, announcements, and be first to know about UEOS-APOG training schedules.
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function ContactCards() {
 
         <div>
           <h3 className="text-xl text-white font-semibold mb-1.5">UEOS-APOG Training</h3>
-          <p className="font-sans text-lg text-[#c8d0e0] leading-relaxed">
+          <p className="font-sans text-[15px] text-[#c8d0e0] leading-relaxed">
             Operator training program. Venue: Cyber9HUB @ Ayerspot, Cyberjaya.
           </p>
         </div>

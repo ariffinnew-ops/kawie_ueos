@@ -83,14 +83,7 @@ export default function Industries() {
               >
                 {ind.name}
               </h3>
-              <p
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: '13px',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.6,
-                }}
-              >
+              <p className="text-[15px] text-[#c8d0e0] leading-relaxed">
                 {ind.description}
               </p>
             </div>

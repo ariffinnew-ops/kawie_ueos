@@ -79,14 +79,7 @@ export default function Security() {
               >
                 {item.title}
               </h3>
-              <p
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: '13px',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.6,
-                }}
-              >
+              <p className="text-[15px] text-[#c8d0e0] leading-relaxed">
                 {item.description}
               </p>
             </div>

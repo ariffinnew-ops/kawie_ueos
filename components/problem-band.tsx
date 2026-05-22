@@ -72,14 +72,7 @@ export default function ProblemBand() {
               >
                 {p.title}
               </h3>
-              <p
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: '14px',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.65,
-                }}
-              >
+              <p className="text-[17px] text-[#c8d0e0] leading-relaxed">
                 {p.description}
               </p>
             </div>
