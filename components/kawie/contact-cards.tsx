@@ -3,13 +3,7 @@ export default function ContactCards() {
     <div className="flex flex-col gap-5">
       {/* Card 1 — WhatsApp Channel */}
       <div
-        className="flex flex-col gap-4 transition-transform duration-200"
-        style={{
-          background: "#1c2030",
-          border: "1px solid rgba(255,255,255,0.07)",
-          borderRadius: 14,
-          padding: 28,
-        }}
+        className="flex flex-col gap-4 bg-[#0f1526] border border-white/10 rounded-[14px] p-7 transition-transform duration-200"
         onMouseEnter={(e) => {
           ;(e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"
         }}
@@ -17,7 +11,6 @@ export default function ContactCards() {
           ;(e.currentTarget as HTMLElement).style.transform = "translateY(0)"
         }}
       >
-        {/* WhatsApp icon */}
         <div
           className="flex items-center justify-center"
           style={{
@@ -32,10 +25,8 @@ export default function ContactCards() {
           </svg>
         </div>
         <div>
-          <h3 className="font-serif font-bold text-white mb-1.5" style={{ fontSize: 16, letterSpacing: "-0.02em" }}>
-            Join our WhatsApp Channel
-          </h3>
-          <p className="font-sans text-sm leading-relaxed" style={{ color: "#8b90a0" }}>
+          <h3 className="text-xl text-white font-semibold mb-1.5">Join our WhatsApp Channel</h3>
+          <p className="font-sans text-lg text-[#c8d0e0] leading-relaxed">
             Get updates, announcements, and be first to know about UEOS-APOG training schedules.
           </p>
         </div>
@@ -43,7 +34,7 @@ export default function ContactCards() {
           href="https://whatsapp.com/channel/0029Vb76GGKQuJCSZQvax3v"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-full font-sans font-medium text-sm transition-all duration-200"
+          className="inline-flex items-center justify-center w-full font-sans font-medium text-base transition-all duration-200"
           style={{
             background: "#25D366",
             color: "#ffffff",
@@ -67,13 +58,7 @@ export default function ContactCards() {
 
       {/* Card 2 — Coach Mahfoz */}
       <div
-        className="flex flex-col gap-4 transition-transform duration-200"
-        style={{
-          background: "#1c2030",
-          border: "1px solid rgba(255,255,255,0.07)",
-          borderRadius: 14,
-          padding: 28,
-        }}
+        className="flex flex-col gap-4 bg-[#0f1526] border border-white/10 rounded-[14px] p-7 transition-transform duration-200"
         onMouseEnter={(e) => {
           ;(e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"
         }}
@@ -97,8 +82,8 @@ export default function ContactCards() {
             M
           </div>
           <div>
-            <p className="font-sans font-medium text-white text-sm">Coach Mahfoz</p>
-            <p className="font-sans text-xs" style={{ color: "#555d70" }}>
+            <p className="font-sans font-medium text-white text-base">Coach Mahfoz</p>
+            <p className="font-sans text-sm text-[#8892a8]">
               Sales &amp; Training Enquiries &middot; Kawie Digital
             </p>
           </div>
@@ -107,29 +92,23 @@ export default function ContactCards() {
         <div className="flex flex-col gap-2">
           <a
             href="tel:+60112173 4434"
-            className="flex items-center gap-2 font-sans text-sm transition-colors duration-200"
-            style={{ color: "#8b90a0" }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#ffffff")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#8b90a0")}
+            className="flex items-center gap-2 font-sans text-base text-[#c8d0e0] hover:text-[#00c6d7] transition-colors duration-200"
           >
-            <span style={{ color: "#00c6d7" }}>&#128222;</span>
+            <span className="text-[#00c6d7]">&#128222;</span>
             +6011-2173 4434
           </a>
           <a
             href="mailto:admin@kawie-digital.com"
-            className="flex items-center gap-2 font-sans text-sm transition-colors duration-200"
-            style={{ color: "#8b90a0" }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#ffffff")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#8b90a0")}
+            className="flex items-center gap-2 font-sans text-base text-[#c8d0e0] hover:text-[#00c6d7] transition-colors duration-200"
           >
-            <span style={{ color: "#00c6d7" }}>&#9993;</span>
+            <span className="text-[#00c6d7]">&#9993;</span>
             admin@kawie-digital.com
           </a>
         </div>
 
         <a
           href="tel:+60112173 4434"
-          className="inline-flex items-center justify-center w-full font-sans font-medium text-sm transition-all duration-200"
+          className="inline-flex items-center justify-center w-full font-sans font-medium text-base transition-all duration-200"
           style={{
             background: "transparent",
             color: "#ffffff",
@@ -154,14 +133,7 @@ export default function ContactCards() {
 
       {/* Card 3 — Training Enquiry */}
       <div
-        className="flex flex-col gap-4 transition-transform duration-200"
-        style={{
-          background: "#1c2030",
-          border: "1px solid rgba(255,255,255,0.07)",
-          borderTop: "2px solid #00c6d7",
-          borderRadius: 14,
-          padding: 28,
-        }}
+        className="flex flex-col gap-4 bg-[#0f1526] border border-white/10 border-t-2 border-t-[#00c6d7] rounded-[14px] p-7 transition-transform duration-200"
         onMouseEnter={(e) => {
           ;(e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"
         }}
@@ -169,9 +141,8 @@ export default function ContactCards() {
           ;(e.currentTarget as HTMLElement).style.transform = "translateY(0)"
         }}
       >
-        {/* Amber badge */}
         <span
-          className="font-sans font-medium text-xs self-start px-3 py-1"
+          className="font-sans font-medium text-sm self-start px-3 py-1"
           style={{
             background: "rgba(251,191,36,0.15)",
             color: "#fbbf24",
@@ -183,20 +154,18 @@ export default function ContactCards() {
         </span>
 
         <div>
-          <h3 className="font-serif font-bold text-white mb-1.5" style={{ fontSize: 16, letterSpacing: "-0.02em" }}>
-            UEOS-APOG Training
-          </h3>
-          <p className="font-sans text-sm leading-relaxed" style={{ color: "#8b90a0" }}>
+          <h3 className="text-xl text-white font-semibold mb-1.5">UEOS-APOG Training</h3>
+          <p className="font-sans text-lg text-[#c8d0e0] leading-relaxed">
             Operator training program. Venue: Cyber9HUB @ Ayerspot, Cyberjaya.
           </p>
         </div>
 
         <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2 font-sans text-sm" style={{ color: "#8b90a0" }}>
+          <div className="flex items-center gap-2 font-sans text-base text-[#c8d0e0]">
             <span>&#128197;</span>
             <span>Schedule: June 2026</span>
           </div>
-          <div className="flex items-center gap-2 font-sans text-sm" style={{ color: "#8b90a0" }}>
+          <div className="flex items-center gap-2 font-sans text-base text-[#c8d0e0]">
             <span>&#128205;</span>
             <span>Venue: Cyber9HUB @ Ayerspot</span>
           </div>
@@ -206,7 +175,7 @@ export default function ContactCards() {
           href="https://whatsapp.com/channel/0029Vb76GGKQuJCSZQvax3v"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-full font-sans font-medium text-sm transition-all duration-200"
+          className="inline-flex items-center justify-center w-full font-sans font-medium text-base transition-all duration-200"
           style={{
             background: "transparent",
             color: "#00c6d7",

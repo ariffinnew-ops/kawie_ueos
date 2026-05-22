@@ -29,14 +29,14 @@ function useScrollReveal() {
 
 // ─── Shared style helpers ──────────────────────────────────────────────────
 const C = {
-  bg: "#0a0c10",
-  surface: "#1c2030",
-  surfaceHover: "#2e3447",
+  bg: "#080b14",
+  surface: "#0f1526",
+  surfaceHover: "#162038",
   cyan: "#00c6d7",
   cyanDim: "rgba(0,198,215,0.12)",
   white: "#ffffff",
-  secondary: "#8b90a0",
-  muted: "#555d70",
+  secondary: "#c8d0e0",
+  muted: "#8892a8",
   border: "rgba(255,255,255,0.07)",
   borderHover: "rgba(255,255,255,0.12)",
   violet: "#7c3aed",
@@ -109,16 +109,7 @@ function SectionH2({ children }: { children: React.ReactNode }) {
 
 function SectionDesc({ children }: { children: React.ReactNode }) {
   return (
-    <p
-      style={{
-        fontFamily: font.body,
-        fontWeight: 300,
-        fontSize: "16px",
-        color: C.secondary,
-        lineHeight: 1.7,
-        maxWidth: "580px",
-      }}
-    >
+    <p className="font-sans font-light text-lg text-[#c8d0e0] leading-relaxed max-w-[580px]">
       {children}
     </p>
   )
@@ -129,15 +120,7 @@ function Feature({ text, color }: { text: string; color: string }) {
   return (
     <div style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "12px" }}>
       <span style={{ color, fontWeight: 700, flexShrink: 0, marginTop: "1px" }}>→</span>
-      <span
-        style={{
-          fontFamily: font.body,
-          fontWeight: 300,
-          fontSize: "14px",
-          color: C.secondary,
-          lineHeight: 1.6,
-        }}
-      >
+      <span className="font-sans font-light text-base text-[#c8d0e0] leading-relaxed">
         {text}
       </span>
     </div>
@@ -217,28 +200,12 @@ function ModuleCard({ tag, tagColor, label, icon, h3, description, features, fli
         </div>
         <div style={{ fontSize: "32px" }}>{icon}</div>
         <h3
-          style={{
-            fontFamily: font.heading,
-            fontWeight: 800,
-            fontSize: "clamp(20px, 2.5vw, 26px)",
-            color: C.white,
-            letterSpacing: "-0.03em",
-            lineHeight: 1.2,
-          }}
+          className="text-xl text-white font-semibold"
+          style={{ fontFamily: font.heading, letterSpacing: "-0.03em", lineHeight: 1.2 }}
         >
           {h3}
         </h3>
-        <p
-          style={{
-            fontFamily: font.body,
-            fontWeight: 300,
-            fontSize: "14px",
-            color: C.secondary,
-            lineHeight: 1.7,
-          }}
-        >
-          {description}
-        </p>
+        <p className="font-sans text-base text-[#c8d0e0] leading-relaxed">{description}</p>
         <button
           style={{
             fontFamily: font.body,
@@ -337,17 +304,7 @@ export default function ProductPage() {
               >
                 UEOS — Unified Enterprise Operating System
               </p>
-              <p
-                style={{
-                  fontFamily: font.body,
-                  fontWeight: 300,
-                  fontSize: "16px",
-                  color: C.secondary,
-                  lineHeight: 1.7,
-                  maxWidth: "560px",
-                  margin: "0 auto 36px",
-                }}
-              >
+              <p className="font-sans font-light text-lg text-[#c8d0e0] leading-relaxed max-w-[560px] mx-auto mb-9">
                 A fully integrated, cloud-native enterprise platform engineered for Oil &amp; Gas operations and built to
                 scale across every industry. Four core modules. One unified data layer. Zero re-entry.
               </p>
@@ -360,7 +317,7 @@ export default function ProductPage() {
                     fontFamily: font.body,
                     fontWeight: 500,
                     fontSize: "15px",
-                    color: "#0a0c10",
+                    color: "#080b14",
                     background: C.cyan,
                     padding: "13px 28px",
                     borderRadius: "999px",
@@ -684,8 +641,8 @@ export default function ProductPage() {
                     >
                       <span style={{ fontSize: "20px" }}>{kp.icon}</span>
                       <div>
-                        <p style={{ fontFamily: font.body, fontWeight: 500, fontSize: "13px", color: C.white }}>{kp.title}</p>
-                        <p style={{ fontFamily: font.body, fontWeight: 300, fontSize: "12px", color: C.muted }}>{kp.desc}</p>
+                        <p className="font-sans font-medium text-base text-white">{kp.title}</p>
+                        <p className="font-sans font-light text-base text-[#8892a8] leading-relaxed">{kp.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -1001,28 +958,12 @@ export default function ProductPage() {
                       {item.tag}
                     </span>
                     <h3
-                      style={{
-                        fontFamily: font.heading,
-                        fontWeight: 800,
-                        fontSize: "16px",
-                        color: C.white,
-                        letterSpacing: "-0.02em",
-                        marginBottom: "8px",
-                      }}
+                      className="text-xl text-white font-semibold mb-2"
+                      style={{ fontFamily: font.heading, letterSpacing: "-0.02em" }}
                     >
                       {item.title}
                     </h3>
-                    <p
-                      style={{
-                        fontFamily: font.body,
-                        fontWeight: 300,
-                        fontSize: "13px",
-                        color: C.secondary,
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {item.desc}
-                    </p>
+                    <p className="font-sans text-base text-[#c8d0e0] leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -1072,18 +1013,7 @@ export default function ProductPage() {
               >
                 Ready to see UEOS in action?
               </h2>
-              <p
-                style={{
-                  fontFamily: font.body,
-                  fontWeight: 300,
-                  fontSize: "16px",
-                  color: C.secondary,
-                  lineHeight: 1.7,
-                  maxWidth: "480px",
-                  margin: "0 auto 36px",
-                  position: "relative",
-                }}
-              >
+              <p className="font-sans font-light text-lg text-[#c8d0e0] leading-relaxed max-w-[480px] mx-auto mb-9 relative">
                 Book a 30-minute demo with our team. We&apos;ll walk you through every module relevant to your business.
               </p>
               <div
@@ -1101,7 +1031,7 @@ export default function ProductPage() {
                     fontFamily: font.body,
                     fontWeight: 500,
                     fontSize: "15px",
-                    color: "#0a0c10",
+                    color: "#080b14",
                     background: C.cyan,
                     padding: "13px 28px",
                     borderRadius: "999px",

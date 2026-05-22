@@ -23,11 +23,14 @@ export default function Home() {
           }
         })
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.01, rootMargin: '0px 0px -40px 0px' }
     )
 
     const elements = document.querySelectorAll('.reveal')
-    elements.forEach((el) => observer.observe(el))
+    elements.forEach((el) => {
+      if (el.closest('#hero-section')) return
+      observer.observe(el)
+    })
 
     return () => observer.disconnect()
   }, [])
@@ -35,7 +38,7 @@ export default function Home() {
   return (
     <main className="landing-page" style={{ background: 'var(--bg)' }}>
       <Navbar />
-      <div className="section-wrap-odd">
+      <div id="hero-section" className="section-wrap-odd">
         <Hero />
       </div>
       <div className="section-wrap-even">

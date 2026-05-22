@@ -13,7 +13,7 @@ export default function Hero() {
           'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,198,215,0.15) 0%, transparent 65%)',
       }}
     >
-      <div className="container-kawie reveal" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '860px', margin: '0 auto' }}>
+      <div className="container-kawie" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '860px', margin: '0 auto' }}>
         {/* Eyebrow */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '32px' }}>
           <span className="eyebrow">

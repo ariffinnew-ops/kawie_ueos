@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
-      style={{ backdropFilter: "blur(12px)", background: "rgba(10,12,16,0.8)", borderBottom: "1px solid rgba(255,255,255,0.10)" }}
+      style={{ backdropFilter: "blur(12px)", background: "rgba(8,11,20,0.8)", borderBottom: "1px solid rgba(255,255,255,0.10)" }}
     >
       <div className="mx-auto flex items-center justify-between px-6" style={{ maxWidth: 1160, height: 64 }}>
         {/* Logo */}
@@ -48,10 +48,9 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-sans font-normal transition-colors duration-200"
-              style={{ color: "var(--text-secondary)" }}
+              className="text-base font-sans font-normal text-[#c8d0e0] transition-colors duration-200"
               onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#ffffff")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#c8d0e0")}
             >
               {link.label}
             </Link>
@@ -62,10 +61,10 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center font-sans font-medium text-sm transition-all duration-200 no-underline"
+            className="inline-flex items-center justify-center font-sans font-medium text-base transition-all duration-200 no-underline"
             style={{
               background: "#00c6d7",
-              color: "#0a0c10",
+              color: "#080b14",
               borderRadius: 999,
               padding: "10px 22px",
             }}
@@ -121,8 +120,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="font-sans text-sm py-2"
-              style={{ color: "var(--text-secondary)" }}
+              className="font-sans text-base text-[#c8d0e0] py-2"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
@@ -130,10 +128,10 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center font-sans font-medium text-sm mt-2 no-underline"
+            className="inline-flex items-center justify-center font-sans font-medium text-base mt-2 no-underline"
             style={{
               background: "#00c6d7",
-              color: "#0a0c10",
+              color: "#080b14",
               borderRadius: 999,
               padding: "10px 22px",
             }}

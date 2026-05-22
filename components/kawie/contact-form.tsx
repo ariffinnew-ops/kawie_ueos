@@ -4,12 +4,12 @@ import { useState } from "react"
 
 const inputBase: React.CSSProperties = {
   width: "100%",
-  background: "#0a0c10",
+  background: "#080b14",
   border: "1px solid rgba(255,255,255,0.12)",
   borderRadius: 8,
   padding: "14px 16px",
   color: "#ffffff",
-  fontSize: 14,
+  fontSize: 16,
   fontFamily: "inherit",
   outline: "none",
   transition: "border-color 0.2s",
@@ -22,15 +22,7 @@ export default function ContactForm() {
     focused === field ? "1px solid #00c6d7" : "1px solid rgba(255,255,255,0.12)"
 
   return (
-    <div
-      className="w-full"
-      style={{
-        background: "#1c2030",
-        border: "1px solid rgba(255,255,255,0.07)",
-        borderRadius: 14,
-        padding: "40px",
-      }}
-    >
+    <div className="w-full bg-[#0f1526] border border-white/10 rounded-[14px] p-10">
       <h2
         className="font-serif font-extrabold text-white mb-8"
         style={{ fontSize: 22, letterSpacing: "-0.03em" }}
@@ -44,11 +36,8 @@ export default function ContactForm() {
         encType="text/plain"
         className="flex flex-col gap-5"
       >
-        {/* Full Name */}
         <div className="flex flex-col gap-1.5">
-          <label className="font-sans text-xs font-medium" style={{ color: "#8b90a0" }}>
-            Full Name
-          </label>
+          <label className="font-sans text-sm font-medium text-[#8892a8]">Full Name</label>
           <input
             type="text"
             name="name"
@@ -60,11 +49,8 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Company Name */}
         <div className="flex flex-col gap-1.5">
-          <label className="font-sans text-xs font-medium" style={{ color: "#8b90a0" }}>
-            Company Name
-          </label>
+          <label className="font-sans text-sm font-medium text-[#8892a8]">Company Name</label>
           <input
             type="text"
             name="company"
@@ -76,21 +62,18 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Industry */}
         <div className="flex flex-col gap-1.5">
-          <label className="font-sans text-xs font-medium" style={{ color: "#8b90a0" }}>
-            Industry
-          </label>
+          <label className="font-sans text-sm font-medium text-[#8892a8]">Industry</label>
           <select
             name="industry"
             required
             defaultValue=""
+            className="text-[#8892a8]"
             style={{
               ...inputBase,
               border: getBorder("industry"),
               appearance: "none",
               cursor: "pointer",
-              color: "#8b90a0",
             }}
             onFocus={() => setFocused("industry")}
             onBlur={() => setFocused(null)}
@@ -101,20 +84,29 @@ export default function ContactForm() {
             <option value="" disabled>
               Select your industry
             </option>
-            <option value="Oil & Gas" style={{ background: "#1c2030" }}>Oil &amp; Gas</option>
-            <option value="Construction" style={{ background: "#1c2030" }}>Construction</option>
-            <option value="Offshore & Shipping" style={{ background: "#1c2030" }}>Offshore &amp; Shipping</option>
-            <option value="Workforce Operations" style={{ background: "#1c2030" }}>Workforce Operations</option>
-            <option value="SME" style={{ background: "#1c2030" }}>SME</option>
-            <option value="Other" style={{ background: "#1c2030" }}>Other</option>
+            <option value="Oil & Gas" className="bg-[#0f1526]">
+              Oil &amp; Gas
+            </option>
+            <option value="Construction" className="bg-[#0f1526]">
+              Construction
+            </option>
+            <option value="Offshore & Shipping" className="bg-[#0f1526]">
+              Offshore &amp; Shipping
+            </option>
+            <option value="Workforce Operations" className="bg-[#0f1526]">
+              Workforce Operations
+            </option>
+            <option value="SME" className="bg-[#0f1526]">
+              SME
+            </option>
+            <option value="Other" className="bg-[#0f1526]">
+              Other
+            </option>
           </select>
         </div>
 
-        {/* Message */}
         <div className="flex flex-col gap-1.5">
-          <label className="font-sans text-xs font-medium" style={{ color: "#8b90a0" }}>
-            Message
-          </label>
+          <label className="font-sans text-sm font-medium text-[#8892a8]">Message</label>
           <textarea
             name="message"
             rows={5}
@@ -126,13 +118,12 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Submit */}
         <button
           type="submit"
-          className="w-full font-sans font-medium text-sm transition-all duration-200 mt-1"
+          className="w-full font-sans font-medium text-base transition-all duration-200 mt-1"
           style={{
             background: "#00c6d7",
-            color: "#0a0c10",
+            color: "#080b14",
             borderRadius: 8,
             padding: "15px 24px",
             border: "none",
@@ -152,10 +143,9 @@ export default function ContactForm() {
           Send Message &rarr;
         </button>
 
-        {/* Note */}
-        <p className="font-sans text-xs text-center" style={{ color: "#555d70" }}>
+        <p className="font-sans text-sm text-[#8892a8] text-center">
           &#10003; We&apos;ll reply within 24 hours to{" "}
-          <span style={{ color: "#8b90a0" }}>admin@kawie-digital.com</span>
+          <span className="text-[#c8d0e0]">admin@kawie-digital.com</span>
         </p>
       </form>
     </div>

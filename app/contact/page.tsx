@@ -51,7 +51,7 @@ export default function ContactPage() {
   return (
     <main
       className="min-h-screen font-sans"
-      style={{ background: "#0a0c10", color: "#ffffff" }}
+      style={{ background: "#080b14", color: "#ffffff" }}
     >
       {/* Noise texture overlay */}
       <div
@@ -75,7 +75,7 @@ export default function ContactPage() {
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
             <span
-              className="font-sans font-medium text-xs tracking-widest uppercase px-4 py-2"
+              className="font-sans font-medium text-sm tracking-widest uppercase px-4 py-2"
               style={{
                 background: "rgba(0,198,215,0.12)",
                 color: "#00c6d7",
@@ -100,14 +100,7 @@ export default function ContactPage() {
           </h1>
 
           {/* Description */}
-          <p
-            className="font-sans font-light leading-relaxed text-balance mx-auto"
-            style={{
-              color: "#8b90a0",
-              fontSize: 18,
-              maxWidth: 520,
-            }}
-          >
+          <p className="font-sans font-light text-lg text-[#c8d0e0] leading-relaxed text-balance mx-auto max-w-[520px]">
             Book a demo, request a proposal, or ask about the UEOS-APOG training program.
             We&apos;ll get back to you within 24 hours.
           </p>
@@ -148,16 +141,16 @@ export default function ContactPage() {
             >
               Ready to see UEOS in action?
             </h2>
-            <p className="font-sans font-light leading-relaxed" style={{ color: "#8b90a0", fontSize: 17 }}>
+            <p className="font-sans font-light text-lg text-[#c8d0e0] leading-relaxed">
               Book a 30-minute demo. No commitment, no pressure.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
               <a
                 href="mailto:admin@kawie-digital.com"
-                className="inline-flex items-center justify-center font-sans font-medium text-sm transition-all duration-200"
+                className="inline-flex items-center justify-center font-sans font-medium text-base transition-all duration-200"
                 style={{
                   background: "#00c6d7",
-                  color: "#0a0c10",
+                  color: "#080b14",
                   borderRadius: 999,
                   padding: "14px 32px",
                 }}
@@ -176,7 +169,7 @@ export default function ContactPage() {
               </a>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center font-sans font-medium text-sm transition-all duration-200"
+                className="inline-flex items-center justify-center font-sans font-medium text-base transition-all duration-200"
                 style={{
                   background: "transparent",
                   color: "#ffffff",
