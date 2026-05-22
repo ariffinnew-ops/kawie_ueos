@@ -9,8 +9,8 @@ interface TimeLeft {
   seconds: number
 }
 
-// Target: 90 days from a fixed reference date
-const LAUNCH_DATE = new Date("2025-08-18T00:00:00")
+// Launch: 1 June 2026 at 00:00 (local time)
+const LAUNCH_DATE = new Date(2026, 5, 1, 0, 0, 0, 0)
 
 function getTimeLeft(): TimeLeft {
   const now = new Date()
@@ -39,9 +39,9 @@ interface UnitBoxProps {
 
 function UnitBox({ value, label }: UnitBoxProps) {
   return (
-    <div className="flex flex-col items-center gap-0.5">
+    <div className="flex flex-col items-center gap-1.5">
       <div
-        className="w-14 sm:w-16 h-14 sm:h-16 flex items-center justify-center rounded-md border font-mono text-xl sm:text-2xl font-bold"
+        className="w-[4.5rem] sm:w-20 md:w-24 h-[4.5rem] sm:h-20 md:h-24 flex items-center justify-center rounded-lg border font-sans text-3xl sm:text-4xl md:text-5xl font-semibold tabular-nums tracking-tight"
         style={{
           borderColor: "var(--border-bright)",
           background: "rgba(0,229,212,0.04)",
@@ -53,7 +53,7 @@ function UnitBox({ value, label }: UnitBoxProps) {
         {pad(value)}
       </div>
       <span
-        className="text-xs sm:text-sm uppercase tracking-wider font-mono"
+        className="text-sm sm:text-base font-medium uppercase tracking-[0.2em] font-sans"
         style={{ color: "var(--muted-foreground)" }}
       >
         {label}
@@ -76,7 +76,7 @@ export default function CountdownTimer() {
 
   if (!mounted) {
     return (
-      <div className="flex gap-2 sm:gap-2.5" aria-label="Countdown timer loading">
+      <div className="flex gap-3 sm:gap-4 md:gap-5" aria-label="Countdown timer loading">
         {["Days", "Hours", "Mins", "Secs"].map((label) => (
           <UnitBox key={label} value={0} label={label} />
         ))}
@@ -86,7 +86,7 @@ export default function CountdownTimer() {
 
   return (
     <div
-      className="flex gap-2 sm:gap-2.5"
+      className="flex gap-3 sm:gap-4 md:gap-5"
       role="timer"
       aria-label="Countdown to launch"
       aria-live="polite"

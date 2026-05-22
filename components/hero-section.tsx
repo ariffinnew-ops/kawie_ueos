@@ -63,24 +63,25 @@ export default function HeroSection() {
         construction and will be ready soon.
       </p>
 
-      {/* Countdown */}
-      <CountdownTimer />
+      {/* Countdown + contact */}
+      <div className="flex flex-col items-center gap-4 sm:gap-5 w-full font-sans">
+        <CountdownTimer />
 
-      {/* Contact row */}
-      <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-sm text-muted-foreground font-mono">
-        <span
-          className="px-3 py-1 rounded border text-sm tracking-widest uppercase"
-          style={{ borderColor: "var(--border-bright)", color: "var(--primary-dim)" }}
-        >
-          Get in touch
-        </span>
-        <a
-          href="mailto:info@kawiedigital.com"
-          className="transition-colors hover:text-foreground"
-          style={{ color: "var(--muted-foreground)" }}
-        >
-          info@kawiedigital.com
-        </a>
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-base sm:text-lg text-muted-foreground">
+          <span
+            className="px-4 py-1.5 rounded-md border text-base sm:text-lg font-medium tracking-[0.15em] uppercase"
+            style={{ borderColor: "var(--border-bright)", color: "var(--primary-dim)" }}
+          >
+            Get in touch
+          </span>
+          <a
+            href="mailto:admin@kawie-digital.com"
+            className="text-base sm:text-lg font-normal transition-colors hover:text-foreground"
+            style={{ color: "var(--foreground)" }}
+          >
+            admin@kawie-digital.com
+          </a>
+        </div>
       </div>
 
       {/* Footer note */}
