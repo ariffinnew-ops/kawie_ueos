@@ -83,7 +83,7 @@ export default function Hero() {
 
         {/* CTAs */}
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '56px' }}>
-          <a href="mailto:admin@kawie-digital.com" className="btn-primary">
+          <a href="/contact" className="btn-primary">
             Book a Demo
           </a>
           <a href="#platform" className="btn-ghost">
