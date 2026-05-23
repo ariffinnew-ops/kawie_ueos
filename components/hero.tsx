@@ -68,7 +68,10 @@ export default function Hero() {
           <a href="/contact" className="btn-primary">
             Book a Demo
           </a>
-          <a href="#platform" className="btn-ghost">
+          <a
+            href="https://v0-kawie-digital-solution-landing-page-8o3eq09a2.vercel.app"
+            className="btn-ghost"
+          >
             Explore UEOS
           </a>
         </div>
