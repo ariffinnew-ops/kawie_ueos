@@ -141,7 +141,7 @@ export default function Footer() {
             &copy; 2026 Kawie Digital Solutions Sdn Bhd. All rights reserved.
           </p>
           <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '12px', color: '#555d70' }}>
-            Powered by Next.js &middot; Supabase &middot; Vercel
+            Powered by Next.js
           </p>
         </div>
       </div>

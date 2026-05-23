@@ -573,7 +573,7 @@ export default function ProductPage() {
                           color: C.cyan,
                         }}
                       >
-                        Supabase PostgreSQL + Row Level Security
+                        PostgreSQL + Row Level Security
                       </p>
                       <p
                         style={{
@@ -589,7 +589,7 @@ export default function ProductPage() {
                     </div>
                   </div>
 
-                  {/* Vercel label */}
+                  {/* Edge network label */}
                   <div
                     style={{
                       position: "absolute",
@@ -606,7 +606,7 @@ export default function ProductPage() {
                     }}
                     className="hidden md:block"
                   >
-                    Vercel Edge Network
+                    Edge Network
                   </div>
                 </div>
 
@@ -771,12 +771,12 @@ export default function ProductPage() {
                     },
                     {
                       icon: "☁️",
-                      title: "Vercel Edge Network",
+                      title: "Edge Network",
                       desc: "Global CDN. Zero servers. 99.9% uptime SLA. Auto-scaling.",
                     },
                     {
                       icon: "🔒",
-                      title: "Supabase Auth",
+                      title: "Session Authentication",
                       desc: "Secure session management. No bypass flags. Security by design.",
                     },
                   ].map((item) => (
@@ -832,7 +832,7 @@ export default function ProductPage() {
                     "SOC 2 Compliant",
                     "PDPA-Ready",
                     "PostgreSQL 15+",
-                    "Vercel Edge Network",
+                    "Edge Network",
                   ].map((badge) => (
                     <div
                       key={badge}

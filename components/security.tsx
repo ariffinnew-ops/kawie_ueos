@@ -21,13 +21,13 @@ const securityItems = [
     icon: '☁️',
     title: 'Cloud-Native Infrastructure',
     description:
-      'Vercel edge network + Supabase PostgreSQL. Zero servers to maintain. 99.9% uptime SLA.',
+      'Cloud Infrastructure + PostgreSQL. Zero servers to maintain. 99.9% uptime SLA.',
   },
   {
     icon: '🔒',
     title: 'Session Authentication',
     description:
-      'Supabase Auth with secure session management. No bypass flags, no shortcuts — security by design.',
+      'Secure session management with role-based access. No bypass flags, no shortcuts — security by design.',
   },
 ]
 
@@ -36,7 +36,7 @@ const badges = [
   'SOC 2 Compliant',
   'PDPA-Ready',
   'PostgreSQL 15+',
-  'Vercel Edge',
+  'Edge Network',
 ]
 
 export default function Security() {

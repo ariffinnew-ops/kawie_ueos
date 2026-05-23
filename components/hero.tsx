@@ -86,7 +86,7 @@ export default function Hero() {
             flexWrap: 'wrap',
           }}
         >
-          {['ISO 27001 Ready', 'SOC 2 Compliant', 'PDPA-Ready', 'Cloud-Native', 'Vercel'].map((item) => (
+          {['ISO 27001 Ready', 'SOC 2 Compliant', 'PDPA-Ready', 'Cloud-Native'].map((item) => (
             <span
               key={item}
               style={{
