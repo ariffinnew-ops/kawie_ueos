@@ -69,7 +69,7 @@ export default function Hero() {
             Book a Demo
           </a>
           <a
-            href="https://v0-kawie-digital-solution-landing-page-8o3eq09a2.vercel.app"
+            href="https://ueos.kawie-digital.com"
             className="btn-ghost"
           >
             Explore UEOS
