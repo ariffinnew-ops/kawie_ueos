@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { COMPANY } from "@/lib/company-contact"
 
 const NAV_LINKS = [
   { label: "Platform", href: "/product" },
@@ -21,7 +22,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex items-center justify-between px-6" style={{ maxWidth: 1160, height: 64 }}>
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 no-underline min-w-0">
+        <Link href={COMPANY.homeUrl} className="flex items-center gap-3 no-underline min-w-0">
           <Image
             src="/kawie-logo.jpg"
             alt="Kawie Digital Solutions"

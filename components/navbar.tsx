@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-[100] bg-white border-b border-[rgba(15,37,87,0.08)]">
       <div className="container-kawie flex items-center justify-between h-16">
-        <a href="/" className="flex items-center gap-3 no-underline min-w-0">
+        <a href={COMPANY.homeUrl} className="flex items-center gap-3 no-underline min-w-0">
           <Image
             src="/kawie-logo.jpg"
             alt="Kawie Digital Solutions"

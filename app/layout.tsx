@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Barlow, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import BackGuard from '@/components/back-guard'
 import './globals.css'
 
 const barlow = Barlow({
@@ -38,7 +37,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${barlow.variable} ${inter.variable}`}>
       <body className="antialiased font-body bg-[#f8faff] text-[#4a5578]">
-        <BackGuard />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

@@ -6,6 +6,7 @@ import Navbar from "@/components/kawie/navbar"
 import Footer from "@/components/kawie/footer"
 import ContactForm from "@/components/kawie/contact-form"
 import ContactCards from "@/components/kawie/contact-cards"
+import { COMPANY } from "@/lib/company-contact"
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null)
@@ -160,9 +161,9 @@ export default function ContactPage() {
               >
                 Request a Demo
               </a>
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center font-sans font-medium text-base transition-all duration-200"
+              <a
+                href={COMPANY.homeUrl}
+                className="inline-flex items-center justify-center font-sans font-medium text-base transition-all duration-200 no-underline"
                 style={{
                   background: "transparent",
                   color: "#ffffff",
@@ -182,7 +183,7 @@ export default function ContactPage() {
                 }}
               >
                 Back to Home
-              </Link>
+              </a>
             </div>
           </div>
         </RevealSection>

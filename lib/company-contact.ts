@@ -1,4 +1,5 @@
 export const COMPANY = {
+  homeUrl: "https://kawie-digital.com/home",
   emailAdmin: "admin@kawie-digital.com",
   emailInquiry: "inquiry@kawie-digital.com",
   address: {
