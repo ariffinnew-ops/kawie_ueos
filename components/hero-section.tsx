@@ -16,7 +16,7 @@ export default function HeroSection() {
           aria-hidden="true"
         />
         <Image
-          src="/kawie-logo.jpg"
+          src="/favicon.svg"
           alt="Kawie Digital Solution logo — neon K on circuit board"
           width={200}
           height={200}

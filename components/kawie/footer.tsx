@@ -23,11 +23,11 @@ export default function Footer() {
         <div className="flex flex-col">
           <div className="flex items-center gap-3">
             <Image
-              src="/kawie-logo.jpg"
+              src="/favicon.svg"
               alt="Kawie Digital Solutions"
-              width={44}
-              height={44}
-              className="rounded-lg shrink-0 h-11 w-auto"
+              width={56}
+              height={56}
+              className="shrink-0 h-14 w-14"
             />
             <span
               className="text-white leading-tight"

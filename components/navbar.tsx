@@ -20,11 +20,11 @@ export default function Navbar() {
       <div className="container-kawie flex items-center justify-between h-14">
         <a href={COMPANY.homeUrl} className="flex items-center gap-2.5 no-underline min-w-0">
           <Image
-            src="/kawie-logo.jpg"
+            src="/favicon.svg"
             alt="Kawie Digital Solutions"
-            width={34}
-            height={34}
-            className="rounded-lg shrink-0"
+            width={48}
+            height={48}
+            className="shrink-0 h-12 w-12"
             priority
           />
           <span
