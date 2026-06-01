@@ -29,6 +29,14 @@ export const metadata: Metadata = {
   description:
     'One platform that consolidates project management, crew operations, and supply chain into a single, always-on cloud system — built for Oil & Gas, ready for every industry.',
   keywords: ['UEOS', 'Enterprise SaaS', 'Oil & Gas', 'Kawie Digital', 'Project Management', 'Crewing Management'],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'UEOS — Unified Enterprise Operating System',
     description: 'Built for Oil & Gas. Ready for Every Industry.',
