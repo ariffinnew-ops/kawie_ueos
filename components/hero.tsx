@@ -1,106 +1,76 @@
+import {
+  ShieldCheck,
+  Cloud,
+  FileCheck,
+  Lock,
+} from 'lucide-react'
+import { COMPANY } from '@/lib/company-contact'
+
+const trustBadges = [
+  { icon: ShieldCheck, label: 'ISO 27001 Ready' },
+  { icon: Lock, label: 'SOC 2 Compliant' },
+  { icon: FileCheck, label: 'PDPA-Ready' },
+  { icon: Cloud, label: 'Cloud-Native' },
+]
+
 export default function Hero() {
   return (
     <section
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-        padding: '80px 0',
-        background:
-          'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,198,215,0.15) 0%, transparent 65%)',
-      }}
+      id="platform"
+      className="section-pad flex items-center"
+      style={{ background: '#f8faff', minHeight: 'calc(100vh - 64px)' }}
     >
-      <div className="container-kawie" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '860px', margin: '0 auto' }}>
-        {/* Eyebrow */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '32px' }}>
-          <span className="eyebrow">
-            <span style={{ color: '#00c6d7' }}>✦</span>
+      <div className="container-kawie text-center max-w-[860px] mx-auto">
+        <div className="flex justify-center mb-8">
+          <span
+            className="inline-block text-xs font-medium text-[#0f2557] px-4 py-1.5 rounded-full border border-[rgba(15,37,87,0.12)] bg-white"
+            style={{ fontFamily: 'var(--font-inter)' }}
+          >
             Now Live — Version 1.0
           </span>
         </div>
 
-        {/* H1 */}
-        <h1
-          className="font-heading text-6xl md:text-7xl lg:text-8xl font-bold"
-          style={{
-            marginBottom: '20px',
-            lineHeight: 1.0,
-          }}
-        >
-          Unified Enterprise
-          <br />
-          <span style={{ color: '#00c6d7' }}>Operating System</span>
+        <h1 className="font-heading mb-5">
+          Unified Enterprise Operating System
         </h1>
 
-        {/* Subheading */}
         <p
+          className="mb-5"
           style={{
-            fontFamily: 'var(--font-dm-sans)',
             fontWeight: 300,
-            fontSize: 'clamp(18px, 2.5vw, 26px)',
-            color: 'var(--text-secondary)',
-            marginBottom: '20px',
-            lineHeight: 1.4,
+            fontSize: '17px',
+            color: '#4a5578',
+            lineHeight: 1.5,
           }}
         >
           Built for Oil &amp; Gas. Ready for Every Industry.
         </p>
 
-        {/* Description */}
         <p
-          className="text-lg md:text-xl text-[#c8d0e0]"
-          style={{
-            fontFamily: 'var(--font-dm-sans)',
-            fontWeight: 400,
-            maxWidth: '640px',
-            margin: '0 auto 40px',
-          }}
+          className="max-w-[640px] mx-auto mb-10"
+          style={{ fontWeight: 400, fontSize: '16px', color: '#4a5578' }}
         >
-          One platform that consolidates project management, crew operations, and supply chain
-          into a single, always-on cloud system — replacing scattered spreadsheets and siloed tools.
+          One platform that consolidates project management, crew operations, and
+          supply chain into a single, always-on cloud system.
         </p>
 
-        {/* CTAs */}
-        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '56px' }}>
-          <a href="/contact" className="btn-primary">
+        <div className="flex gap-3 justify-center flex-wrap mb-14">
+          <a href={COMPANY.demoUrl} className="btn-primary-navy">
             Book a Demo
           </a>
-          <a
-            href="https://ueos.kawie-digital.com"
-            className="btn-ghost"
-          >
-            Explore UEOS
+          <a href="#modules" className="btn-ghost-outline">
+            Explore Platform
           </a>
         </div>
 
-        {/* Trust row */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '20px',
-            flexWrap: 'wrap',
-          }}
-        >
-          {['ISO 27001 Ready', 'SOC 2 Compliant', 'PDPA-Ready', 'Cloud-Native'].map((item) => (
+        <div className="flex items-center justify-center gap-6 flex-wrap">
+          {trustBadges.map(({ icon: Icon, label }) => (
             <span
-              key={item}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                fontFamily: 'var(--font-dm-sans)',
-                fontSize: '12px',
-                color: 'var(--text-muted)',
-                fontWeight: 400,
-              }}
+              key={label}
+              className="flex items-center gap-2 text-xs text-[#4a5578]"
             >
-              <span style={{ color: '#00c6d7', fontSize: '8px' }}>✦</span>
-              {item}
+              <Icon size={14} className="text-[#00c6d7] shrink-0" aria-hidden />
+              {label}
             </span>
           ))}
         </div>

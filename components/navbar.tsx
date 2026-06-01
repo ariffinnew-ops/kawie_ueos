@@ -1,193 +1,118 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
+import { COMPANY } from '@/lib/company-contact'
+
+const links = [
+  { label: 'Platform', href: '#platform' },
+  { label: 'Modules', href: '#modules' },
+  { label: 'Industries', href: '#industries' },
+  { label: 'Training', href: '#training' },
+  { label: 'Contact', href: '#contact' },
+]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const links = [
-    { label: 'Platform', href: '#platform' },
-    { label: 'Solutions', href: '#industries' },
-    { label: 'Training', href: '#training' },
-    { label: 'Contact', href: '#contact' },
-  ]
 
   return (
-    <header
-      style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 100,
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        background: scrolled ? 'rgba(8,11,20,0.92)' : 'rgba(8,11,20,0.8)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        transition: 'background 0.3s ease',
-      }}
-    >
-      <div className="container-kawie" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
-        {/* Logo */}
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', minWidth: 0 }}>
+    <header className="sticky top-0 z-[100] bg-white border-b border-[rgba(15,37,87,0.08)]">
+      <div className="container-kawie flex items-center justify-between h-16">
+        <a href="/" className="flex items-center gap-3 no-underline min-w-0">
           <Image
             src="/kawie-logo.jpg"
             alt="Kawie Digital Solutions"
             width={40}
             height={40}
-            style={{ borderRadius: 8, flexShrink: 0 }}
+            className="rounded-lg shrink-0"
             priority
           />
           <span
-            style={{
-              fontFamily: "var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: 16,
-              color: '#ffffff',
-              lineHeight: 1.2,
-            }}
-            className="hidden-mobile-brand"
+            className="hidden sm:block font-heading text-[#0f2557] leading-tight"
+            style={{ fontWeight: 700, fontSize: 16 }}
           >
-            Kawie Digital Solutions Sdn Bhd
+            Kawie Digital Solutions
           </span>
         </a>
 
-        {/* Desktop Nav */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '36px' }} className="hidden-mobile">
+        <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              style={{
-                color: 'var(--text-secondary)',
-                textDecoration: 'none',
-                fontSize: '14px',
-                fontWeight: 400,
-                fontFamily: 'var(--font-dm-sans)',
-                transition: 'color 0.15s ease',
-              }}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#ffffff')}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
+              className="font-body text-[#0f2557] no-underline text-base font-normal hover:text-[#00c6d7] transition-colors duration-200"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden-mobile">
-          <a href="/contact" className="btn-primary" style={{ fontSize: '14px', padding: '9px 22px' }}>
-            Book a Demo
+        <div className="hidden md:block">
+          <a
+            href={COMPANY.contactUrl}
+            className="inline-flex items-center justify-center font-body font-medium text-base text-white no-underline transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
+            style={{
+              background: '#0f2557',
+              borderRadius: 999,
+              padding: '10px 22px',
+            }}
+          >
+            Talk to Us
           </a>
         </div>
 
-        {/* Hamburger */}
         <button
-          className="show-mobile"
+          type="button"
+          className="md:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 bg-transparent border-0 cursor-pointer"
           onClick={() => setOpen(!open)}
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: '8px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '5px',
-          }}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <span
+            className="block w-5 h-0.5 bg-[#0f2557] transition-all duration-200"
             style={{
-              display: 'block',
-              width: '22px',
-              height: '2px',
-              background: '#ffffff',
-              borderRadius: '2px',
-              transition: 'transform 0.2s ease, opacity 0.2s ease',
-              transform: open ? 'rotate(45deg) translate(5px, 5px)' : 'none',
+              transform: open ? 'translateY(8px) rotate(45deg)' : 'none',
             }}
           />
           <span
-            style={{
-              display: 'block',
-              width: '22px',
-              height: '2px',
-              background: '#ffffff',
-              borderRadius: '2px',
-              transition: 'opacity 0.2s ease',
-              opacity: open ? 0 : 1,
-            }}
+            className="block w-5 h-0.5 bg-[#0f2557] transition-all duration-200"
+            style={{ opacity: open ? 0 : 1 }}
           />
           <span
+            className="block w-5 h-0.5 bg-[#0f2557] transition-all duration-200"
             style={{
-              display: 'block',
-              width: '22px',
-              height: '2px',
-              background: '#ffffff',
-              borderRadius: '2px',
-              transition: 'transform 0.2s ease, opacity 0.2s ease',
-              transform: open ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
+              transform: open ? 'translateY(-8px) rotate(-45deg)' : 'none',
             }}
           />
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div
-          className="show-mobile"
-          style={{
-            background: 'rgba(10,12,16,0.98)',
-            borderTop: '1px solid rgba(255,255,255,0.06)',
-            padding: '16px 24px 24px',
-          }}
-        >
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                style={{
-                  color: 'var(--text-secondary)',
-                  textDecoration: 'none',
-                  fontSize: '16px',
-                  fontWeight: 400,
-                  fontFamily: 'var(--font-dm-sans)',
-                  padding: '12px 0',
-                  borderBottom: '1px solid rgba(255,255,255,0.05)',
-                }}
-              >
-                {l.label}
-              </a>
-            ))}
-            <div style={{ marginTop: '16px' }}>
-              <a href="/contact" className="btn-primary">
-                Book a Demo
-              </a>
-            </div>
-          </nav>
+        <div className="md:hidden border-t border-[rgba(15,37,87,0.08)] bg-white px-6 pb-6 pt-2 flex flex-col gap-1">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="font-body text-[#0f2557] no-underline text-base py-3"
+            >
+              {l.label}
+            </a>
+          ))}
+          <a
+            href={COMPANY.contactUrl}
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center justify-center font-body font-medium text-base text-white no-underline mt-3"
+            style={{
+              background: '#0f2557',
+              borderRadius: 999,
+              padding: '10px 22px',
+            }}
+          >
+            Talk to Us
+          </a>
         </div>
       )}
-
-      <style jsx>{`
-        @media (min-width: 768px) {
-          .hidden-mobile { display: flex !important; }
-          .show-mobile { display: none !important; }
-          .hidden-mobile-brand { display: inline !important; }
-        }
-        @media (max-width: 767px) {
-          .hidden-mobile { display: none !important; }
-          .show-mobile { display: flex !important; }
-          .hidden-mobile-brand { display: none !important; }
-        }
-      `}</style>
     </header>
   )
 }

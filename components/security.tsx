@@ -1,33 +1,46 @@
-const securityItems = [
+import {
+  Shield,
+  Lock,
+  FileCheck,
+  Cloud,
+  KeyRound,
+  type LucideIcon,
+} from 'lucide-react'
+
+const securityItems: {
+  icon: LucideIcon
+  title: string
+  description: string
+}[] = [
   {
-    icon: '🔐',
+    icon: Shield,
     title: 'Row Level Security',
     description:
       'Database-enforced RLS on all tables. Project managers see only their project. Zero data leakage.',
   },
   {
-    icon: '👤',
-    title: 'RBAC — L1 / L2 / L3',
+    icon: Lock,
+    title: 'RBAC L1/L2/L3',
     description:
       'Role-gated access at every route. Admin, Reviewer, and Viewer — fully enforced at system level.',
   },
   {
-    icon: '📋',
+    icon: FileCheck,
     title: 'Audit Trails',
     description:
       'Login logs, procurement history, and cost ledgers — immutable, timestamped, always ready for audit.',
   },
   {
-    icon: '☁️',
+    icon: Cloud,
     title: 'Cloud-Native Infrastructure',
     description:
-      'Cloud Infrastructure + PostgreSQL. Zero servers to maintain. 99.9% uptime SLA.',
+      'Cloud infrastructure with PostgreSQL. Zero servers to maintain. 99.9% uptime SLA.',
   },
   {
-    icon: '🔒',
+    icon: KeyRound,
     title: 'Session Authentication',
     description:
-      'Secure session management with role-based access. No bypass flags, no shortcuts — security by design.',
+      'Secure session management with role-based access. Security by design — no bypass flags.',
   },
 ]
 
@@ -41,66 +54,34 @@ const badges = [
 
 export default function Security() {
   return (
-    <section className="section-pad" style={{ background: 'var(--bg)' }}>
+    <section className="section-pad">
       <div className="container-kawie">
-        {/* Header */}
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div className="reveal text-center mb-14">
           <span className="eyebrow">Security & Compliance</span>
-          <h2
-            className="font-heading"
-            style={{ fontSize: 'clamp(28px, 4vw, 48px)', color: '#ffffff' }}
-          >
-            Enterprise-grade. At every layer.
-          </h2>
+          <h2 className="font-heading">Enterprise-grade. At every layer.</h2>
         </div>
 
-        {/* Grid */}
         <div
-          className="reveal"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '16px',
-            marginBottom: '48px',
-          }}
+          className="grid gap-4 mb-12"
+          data-stagger
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}
         >
           {securityItems.map((item) => (
-            <div key={item.title} className="card-hover kawie-card" style={{ cursor: 'default' }}>
-              <div style={{ fontSize: '24px', marginBottom: '12px' }}>{item.icon}</div>
-              <h3
-                className="font-heading"
-                style={{
-                  fontSize: '15px',
-                  color: '#ffffff',
-                  marginBottom: '10px',
-                  letterSpacing: '-0.02em',
-                  fontWeight: 700,
-                }}
-              >
-                {item.title}
-              </h3>
-              <p className="text-[15px] text-[#c8d0e0] leading-relaxed">
-                {item.description}
-              </p>
+            <div key={item.title} className="reveal kawie-card">
+              <div className="icon-tile icon-tile-navy">
+                <item.icon size={24} strokeWidth={1.75} aria-hidden />
+              </div>
+              <h3 className="text-base mb-2">{item.title}</h3>
+              <p className="text-sm">{item.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Compliance badges */}
-        <div className="reveal" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div className="reveal flex gap-3 flex-wrap justify-center">
           {badges.map((b) => (
             <span
               key={b}
-              style={{
-                fontFamily: 'var(--font-dm-sans)',
-                fontSize: '12px',
-                fontWeight: 500,
-                color: '#10b981',
-                background: 'rgba(16,185,129,0.1)',
-                border: '1px solid rgba(16,185,129,0.3)',
-                padding: '7px 16px',
-                borderRadius: '999px',
-              }}
+              className="text-xs font-medium text-[#0f2557] px-4 py-2 rounded-full border border-[rgba(15,37,87,0.12)] bg-white"
             >
               {b}
             </span>

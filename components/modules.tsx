@@ -1,10 +1,27 @@
-const modules = [
+import {
+  LayoutDashboard,
+  Users,
+  Package,
+  DollarSign,
+  type LucideIcon,
+} from 'lucide-react'
+
+const modules: {
+  id: string
+  abbr: string
+  full: string
+  color: string
+  icon: LucideIcon
+  description: string
+  features: string[]
+}[] = [
   {
+    id: 'pms',
     abbr: 'PMS',
     full: 'Project Management System',
     color: '#00c6d7',
-    description:
-      'The command centre for every active contract — tracking costs, timelines, and resources across all active projects in real time.',
+    icon: LayoutDashboard,
+    description: 'The command centre for every active contract.',
     features: [
       'Portfolio dashboard with live contract values',
       'Budget vs actual across all projects',
@@ -13,24 +30,26 @@ const modules = [
     ],
   },
   {
+    id: 'cms',
     abbr: 'CMS',
     full: 'Crewing Management System',
     color: '#7c3aed',
-    description:
-      'The people engine — full crew lifecycle management from onboarding to offboarding, with automated compliance alerts.',
+    icon: Users,
+    description: 'Full crew lifecycle from onboarding to offboarding.',
     features: [
       'Complete crew records — every position covered',
       'Auto-alerts at 90, 30, and 0 days before cert expiry',
       '24-cycle rotation management per year',
-      'Statement auto-calculated, flows direct to project budget',
+      'Statement auto-calculated, flows to project budget',
     ],
   },
   {
+    id: 'scm',
     abbr: 'SCM',
     full: 'Supply Chain Management',
     color: '#f59e0b',
-    description:
-      'Full procurement lifecycle — every transaction tagged to the correct project and budget category automatically.',
+    icon: Package,
+    description: 'Full procurement lifecycle, every transaction tagged.',
     features: [
       'MSR → PO → DO — zero manual reference tracking',
       'Real-time inventory with reorder alerts at 5 units',
@@ -39,13 +58,14 @@ const modules = [
     ],
   },
   {
+    id: 'pcm',
     abbr: 'PCM',
     full: 'Project Cost Management',
     color: '#10b981',
-    description:
-      'Financial intelligence per project — live budget vs actual across five cost categories with forecast mode.',
+    icon: DollarSign,
+    description: 'Financial intelligence per project, live.',
     features: [
-      'Manpower · Materials · Machinery · Special Services · Others',
+      'Manpower · Materials · Machinery · Special Services',
       'Real-time burn rate & risk analysis per day',
       'Forecast mode for future financial planning',
       'Pulls live from SCM + CMS — zero re-entry',
@@ -55,85 +75,36 @@ const modules = [
 
 export default function Modules() {
   return (
-    <section className="section-pad" style={{ background: 'var(--section-even)' }}>
+    <section id="modules" className="section-pad">
       <div className="container-kawie">
-        {/* Header */}
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div className="reveal text-center mb-14">
           <span className="eyebrow">Core Modules</span>
-          <h2
-            className="font-heading"
-            style={{ fontSize: 'clamp(28px, 4vw, 48px)', color: '#ffffff' }}
-          >
-            Four engines. One platform.
-          </h2>
+          <h2 className="font-heading">Four engines. One platform.</h2>
         </div>
 
-        {/* 4-card grid */}
-        <div
-          className="reveal"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '20px',
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5" data-stagger>
           {modules.map((mod) => (
-            <div
-              key={mod.abbr}
-              className="card-hover kawie-card"
-              style={{ borderTop: `3px solid ${mod.color}` }}
-            >
-              {/* Module badge */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-plus-jakarta-sans)',
-                    fontWeight: 800,
-                    fontSize: '13px',
-                    color: mod.color,
-                    background: `${mod.color}18`,
-                    border: `1px solid ${mod.color}40`,
-                    padding: '4px 10px',
-                    borderRadius: '999px',
-                    letterSpacing: '0.06em',
-                  }}
-                >
-                  {mod.abbr}
-                </span>
+            <div key={mod.abbr} id={mod.id} className="reveal kawie-card">
+              <div
+                className="icon-tile mb-4"
+                style={{ background: `${mod.color}18`, color: mod.color }}
+              >
+                <mod.icon size={26} strokeWidth={1.75} aria-hidden />
               </div>
-
-              <h3
-                className="font-heading"
-                style={{
-                  fontSize: '16px',
-                  color: '#ffffff',
-                  marginBottom: '12px',
-                  letterSpacing: '-0.02em',
-                  fontWeight: 600,
-                }}
+              <span
+                className="inline-block text-xs font-bold tracking-wider mb-2"
+                style={{ color: mod.color }}
               >
-                {mod.full}
-              </h3>
-
-              <p
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: '14px',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.65,
-                  marginBottom: '24px',
-                }}
-              >
-                {mod.description}
-              </p>
-
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {mod.abbr}
+              </span>
+              <h3 className="mb-3 text-lg">{mod.full}</h3>
+              <p className="text-sm mb-6">{mod.description}</p>
+              <ul className="list-none flex flex-col gap-2">
                 {mod.features.map((f) => (
-                  <li
-                    key={f}
-                    className="flex items-start gap-2 text-[15px] text-[#c8d0e0] leading-loose"
-                  >
-                    <span style={{ color: mod.color, flexShrink: 0, marginTop: '1px' }}>→</span>
+                  <li key={f} className="flex items-start gap-2 text-[15px] text-[#4a5578]">
+                    <span style={{ color: mod.color }} className="shrink-0">
+                      →
+                    </span>
                     {f}
                   </li>
                 ))}

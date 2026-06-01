@@ -1,147 +1,146 @@
-const footerLinks = {
-  Platform: [
-    { label: 'UEOS Overview', href: '#platform' },
-    { label: 'PMS — Projects', href: '#platform' },
-    { label: 'CMS — Crewing', href: '#platform' },
-    { label: 'SCM — Procurement', href: '#platform' },
-    { label: 'PCM — Budget', href: '#platform' },
-  ],
-  Industries: [
-    { label: 'Oil & Gas', href: '#industries' },
-    { label: 'Construction', href: '#industries' },
-    { label: 'Offshore & Shipping', href: '#industries' },
-    { label: 'Workforce Ops', href: '#industries' },
-    { label: 'SMEs', href: '#industries' },
-  ],
-  Company: [
-    { label: 'Training — UEOS-APOG', href: '#training' },
-    { label: 'admin@kawie-digital.com', href: 'mailto:admin@kawie-digital.com' },
-    { label: '+6011-2173 4434', href: 'tel:+60112173 4434' },
-    { label: 'WhatsApp Channel', href: 'https://whatsapp.com/channel/0029Vb76GGKQuJCSZQvax3v' },
-  ],
+import Image from 'next/image'
+import { COMPANY } from '@/lib/company-contact'
+
+function FooterLink({
+  href,
+  children,
+}: {
+  href: string
+  children: React.ReactNode
+}) {
+  return (
+    <a
+      href={href}
+      className="block font-body text-[15px] text-[#c8d0e0] leading-[2.4] no-underline hover:text-[#00c6d7] transition-colors"
+    >
+      {children}
+    </a>
+  )
+}
+
+function FooterHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h4
+      className="font-body text-[13px] font-bold uppercase tracking-[0.15em] mb-6"
+      style={{ color: '#00c6d7' }}
+    >
+      {children}
+    </h4>
+  )
 }
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        background: '#080a0d',
-        borderTop: '1px solid rgba(255,255,255,0.10)',
-        paddingTop: '60px',
-        paddingBottom: '32px',
-      }}
-    >
-      <div className="container-kawie">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-            gap: '40px',
-            marginBottom: '56px',
-          }}
-        >
-          {/* Col 1 — Brand */}
-          <div style={{ gridColumn: 'span 1' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <img src="/kawie-logo.jpg" alt="Kawie Digital Solutions" height={40} width={40} style={{ borderRadius: 8, flexShrink: 0 }} />
-              <span
-                style={{
-                  fontFamily: "var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 700,
-                  fontSize: 16,
-                  color: '#ffffff',
-                  lineHeight: 1.2,
-                }}
-              >
-                Kawie Digital Solutions Sdn Bhd
-              </span>
-            </div>
-            <p
-              style={{
-                fontFamily: 'var(--font-dm-sans)',
-                fontSize: '14px',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.65,
-                marginBottom: '12px',
-              }}
-            >
-              Kawie Digital Solutions Sdn Bhd — Unified Enterprise Operating System for modern operations teams.
-            </p>
+    <footer className="w-full bg-[#0f2557] pt-20 pb-0">
+      <div
+        className="container-kawie grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+        style={{ paddingBottom: 48 }}
+      >
+        {/* Col 1 — Brand */}
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/kawie-logo.jpg"
+              alt="Kawie Digital Solutions"
+              width={44}
+              height={44}
+              className="rounded-lg shrink-0"
+            />
             <span
-              style={{
-                display: 'inline-block',
-                fontFamily: 'var(--font-dm-sans)',
-                fontSize: '11px',
-                color: '#00c6d7',
-                background: 'rgba(0,198,215,0.1)',
-                border: '1px solid rgba(0,198,215,0.2)',
-                padding: '4px 10px',
-                borderRadius: '999px',
-              }}
+              className="text-white leading-tight font-heading"
+              style={{ fontWeight: 700, fontSize: 15 }}
             >
-              Authorised Agent & Training Centre
+              Kawie Digital Solutions Sdn Bhd
             </span>
           </div>
-
-          {/* Col 2-4 — Links */}
-          {Object.entries(footerLinks).map(([section, items]) => (
-            <div key={section}>
-              <div
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: '11px',
-                  fontWeight: 500,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: '#555d70',
-                  marginBottom: '16px',
-                }}
-              >
-                {section}
-              </div>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {items.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      target={item.href.startsWith('http') ? '_blank' : undefined}
-                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      style={{
-                        fontFamily: 'var(--font-dm-sans)',
-                        fontSize: '13px',
-                        color: 'var(--text-secondary)',
-                        textDecoration: 'none',
-                        transition: 'color 0.15s ease',
-                      }}
-                      onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#ffffff')}
-                      onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <p className="font-body text-[15px] text-[#c8d0e0] leading-relaxed mt-3">
+            Your trusted digital partner — from custom software to enterprise platforms to
+            hands-on workforce training.
+          </p>
+          <span className="font-body self-start text-[#00c6d7] text-[13px] font-bold uppercase tracking-[0.2em] mt-4">
+            Authorised Training Centre — with {COMPANY.trainingVenue}
+          </span>
+          <p className="font-body text-[13px] text-[#8892a8] mt-4 m-0">
+            SSM: 202601019532 (1681629-X)
+          </p>
         </div>
 
-        {/* Bottom bar */}
-        <div
-          style={{
-            borderTop: '1px solid rgba(255,255,255,0.10)',
-            paddingTop: '24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '12px',
-          }}
-        >
-          <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '12px', color: '#555d70' }}>
-            &copy; 2026 Kawie Digital Solutions Sdn Bhd. All rights reserved.
-          </p>
-          <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '12px', color: '#555d70' }}>
-            Powered by Next.js
+        {/* Col 2 — Platform */}
+        <div className="flex flex-col">
+          <FooterHeading>Platform</FooterHeading>
+          <ul className="flex flex-col m-0 p-0 list-none">
+            <li>
+              <FooterLink href="#modules">UEOS Overview</FooterLink>
+            </li>
+            <li>
+              <FooterLink href="#pms">PMS — Projects</FooterLink>
+            </li>
+            <li>
+              <FooterLink href="#cms">CMS — Crewing</FooterLink>
+            </li>
+            <li>
+              <FooterLink href="#scm">SCM — Procurement</FooterLink>
+            </li>
+            <li>
+              <FooterLink href="#pcm">PCM — Budget</FooterLink>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 3 — Company */}
+        <div className="flex flex-col">
+          <FooterHeading>Company</FooterHeading>
+          <ul className="flex flex-col m-0 p-0 list-none">
+            <li>
+              <FooterLink href="https://kawie-digital.com/home/about">About Us</FooterLink>
+            </li>
+            <li>
+              <FooterLink href="#platform">Our Product — UEOS</FooterLink>
+            </li>
+            <li>
+              <FooterLink href="#training">Training — UEOS-APOG</FooterLink>
+            </li>
+            <li>
+              <FooterLink href="#industries">Industries We Serve</FooterLink>
+            </li>
+            <li>
+              <FooterLink href={COMPANY.contactUrl}>Contact Us</FooterLink>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 4 — Connect */}
+        <div className="flex flex-col">
+          <FooterHeading>Connect</FooterHeading>
+          <ul className="flex flex-col m-0 p-0 list-none">
+            <li>
+              <FooterLink href={`mailto:${COMPANY.emailAdmin}`}>
+                {COMPANY.emailAdmin}
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink href={`mailto:${COMPANY.emailInquiry}`}>
+                {COMPANY.emailInquiry}
+              </FooterLink>
+            </li>
+          </ul>
+          <address className="not-italic font-body text-[15px] text-[#c8d0e0] leading-[2.4] mt-2">
+            {COMPANY.address.line1}
+            <br />
+            {COMPANY.address.line2}
+            <br />
+            {COMPANY.address.line3}
+            <br />
+            {COMPANY.address.line4}
+          </address>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/10 py-5">
+        <div className="container-kawie">
+          <p className="font-body text-center text-[13px] text-[#8892a8] m-0">
+            &copy; 2026 Kawie Digital Solutions Sdn Bhd (202601019532). All rights reserved.
           </p>
         </div>
       </div>

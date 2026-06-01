@@ -1,0 +1,14 @@
+export const COMPANY = {
+  emailAdmin: "admin@kawie-digital.com",
+  emailInquiry: "inquiry@kawie-digital.com",
+  address: {
+    line1: "03-12A Kenwingston,",
+    line2: "Business Centre Persiaran,",
+    line3: "Bestari Cyber 9 Cyberjaya,",
+    line4: "63000 Sepang, Selangor.",
+  },
+  trainingVenue: "Cyber9HUB @ Ayerspot",
+  trainingEmail: "admin@ayerspot.com",
+  contactUrl: "https://kawie-digital.com/home/contact",
+  demoUrl: "https://kawie-digital.com/home/contact?service=UEOS%20Platform%20Demo",
+}

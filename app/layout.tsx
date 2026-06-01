@@ -1,19 +1,20 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google'
+import { Barlow, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import BackGuard from '@/components/back-guard'
 import './globals.css'
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const barlow = Barlow({
   subsets: ['latin'],
   weight: ['700', '800'],
-  variable: '--font-plus-jakarta-sans',
+  variable: '--font-barlow',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
-  variable: '--font-dm-sans',
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -27,7 +28,6 @@ export const metadata: Metadata = {
     description: 'Built for Oil & Gas. Ready for Every Industry.',
     siteName: 'Kawie Digital Solutions',
   },
-  generator: 'v0.app',
 }
 
 export default function RootLayout({
@@ -36,8 +36,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${dmSans.variable} bg-[#080b14]`}>
-      <body className="antialiased font-body">
+    <html lang="en" className={`${barlow.variable} ${inter.variable}`}>
+      <body className="antialiased font-body bg-[#f8faff] text-[#4a5578]">
+        <BackGuard />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

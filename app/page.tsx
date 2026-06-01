@@ -4,14 +4,12 @@ import { useEffect } from 'react'
 import Navbar from '@/components/navbar'
 import Hero from '@/components/hero'
 import ProblemBand from '@/components/problem-band'
-import UeosIntro from '@/components/ueos-intro'
 import Modules from '@/components/modules'
 import Industries from '@/components/industries'
 import Training from '@/components/training'
 import Security from '@/components/security'
-import Roadmap from '@/components/roadmap'
 import CtaBand from '@/components/cta-band'
-import Footer from '@/components/kawie/footer'
+import Footer from '@/components/footer'
 
 export default function Home() {
   useEffect(() => {
@@ -23,44 +21,45 @@ export default function Home() {
           }
         })
       },
-      { threshold: 0.01, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.08 }
     )
 
     const elements = document.querySelectorAll('.reveal')
     elements.forEach((el) => {
-      if (el.closest('#hero-section')) return
+      if (el.closest('#platform')) return
       observer.observe(el)
+    })
+
+    document.querySelectorAll('[data-stagger]').forEach((grid) => {
+      const children = grid.querySelectorAll(':scope > .reveal')
+      children.forEach((child, index) => {
+        ;(child as HTMLElement).style.transitionDelay = `${index * 0.1}s`
+      })
     })
 
     return () => observer.disconnect()
   }, [])
 
   return (
-    <main className="landing-page" style={{ background: 'var(--bg)' }}>
+    <main className="landing-page min-h-screen">
       <Navbar />
-      <div id="hero-section" className="section-wrap-odd">
+      <div className="section-wrap-odd">
         <Hero />
       </div>
       <div className="section-wrap-even">
         <ProblemBand />
       </div>
       <div className="section-wrap-odd">
-        <UeosIntro />
-      </div>
-      <div className="section-wrap-even">
         <Modules />
       </div>
-      <div className="section-wrap-odd">
+      <div className="section-wrap-even">
         <Industries />
       </div>
-      <div className="section-wrap-even">
+      <div className="section-wrap-odd">
         <Training />
       </div>
-      <div className="section-wrap-odd">
-        <Security />
-      </div>
       <div className="section-wrap-even">
-        <Roadmap />
+        <Security />
       </div>
       <div className="section-wrap-odd">
         <CtaBand />

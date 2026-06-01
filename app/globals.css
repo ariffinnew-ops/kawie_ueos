@@ -3,76 +3,49 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ─── Kawie Design Tokens ─── */
 :root {
-  --bg: #080b14;
-  --surface: #0f1526;
-  --surface-2: #162038;
+  --navy: #0f2557;
   --cyan: #00c6d7;
-  --cyan-dim: rgba(0, 198, 215, 0.12);
-  --text: #f0f4ff;
-  --text-secondary: #c8d0e0;
-  --text-muted: #8892a8;
-  --border: rgba(255, 255, 255, 0.10);
-  --border-hover: rgba(0, 198, 215, 0.25);
-  --section-odd: #080b14;
-  --section-even: #0c101c;
+  --body: #4a5578;
+  --bg: #f8faff;
+  --white: #ffffff;
+  --border: rgba(15, 37, 87, 0.08);
 
-  /* Module colours */
   --mod-pms: #00c6d7;
   --mod-cms: #7c3aed;
   --mod-scm: #f59e0b;
   --mod-pcm: #10b981;
 
-  --radius: 0.875rem;
+  --radius: 12px;
 
-  /* shadcn compat */
-  --background: #080b14;
-  --foreground: #f0f4ff;
-  --card: #0f1526;
-  --card-foreground: #f0f4ff;
-  --popover: #0f1526;
-  --popover-foreground: #f0f4ff;
-  --primary: #00c6d7;
-  --primary-foreground: #080b14;
-  --secondary: #162038;
-  --secondary-foreground: #f0f4ff;
-  --muted: #162038;
-  --muted-foreground: #8892a8;
+  --background: #f8faff;
+  --foreground: #4a5578;
+  --card: #ffffff;
+  --card-foreground: #4a5578;
+  --primary: #0f2557;
+  --primary-foreground: #ffffff;
+  --muted: #f8faff;
+  --muted-foreground: #4a5578;
   --accent: #00c6d7;
-  --accent-foreground: #080b14;
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border-color: rgba(255, 255, 255, 0.10);
-  --input: rgba(255, 255, 255, 0.10);
+  --accent-foreground: #0f2557;
+  --border-color: rgba(15, 37, 87, 0.08);
   --ring: #00c6d7;
-  --sidebar: #0f1526;
-  --sidebar-foreground: #f0f4ff;
 }
 
 @theme inline {
-  --font-sans: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
-  --font-heading: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-body: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-heading: var(--font-barlow), 'Barlow', system-ui, sans-serif;
+  --font-body: var(--font-inter), 'Inter', system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border-color);
   --color-ring: var(--ring);
-  --radius-sm: 8px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
 }
 
-/* ─── Base ─── */
 @layer base {
   * {
     box-sizing: border-box;
@@ -86,66 +59,55 @@
 
   body {
     background-color: var(--bg);
-    color: var(--text);
-    font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
-    font-size: 17px;
+    color: var(--body);
+    font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.75;
-    position: relative;
+    line-height: 1.7;
     overflow-x: hidden;
   }
 
   h1 {
-    font-size: clamp(52px, 8vw, 96px);
-    color: #ffffff;
+    font-family: var(--font-barlow), 'Barlow', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 6vw, 72px);
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   h2 {
-    font-size: clamp(32px, 4vw, 52px);
-    color: #ffffff;
+    font-family: var(--font-barlow), 'Barlow', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 46px);
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
 
   h3 {
-    font-size: 22px;
-    color: #ffffff;
+    font-family: var(--font-barlow), 'Barlow', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--navy);
+    line-height: 1.3;
   }
 
   p {
-    font-size: 17px;
-    color: var(--text-secondary);
-    line-height: 1.8;
-  }
-
-  /* Noise texture overlay */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.035;
-    pointer-events: none;
-    z-index: 9999;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    text-shadow: 0 0 40px rgba(0, 198, 215, 0.15);
+    font-size: 16px;
+    color: var(--body);
+    line-height: 1.7;
   }
 }
 
-/* ─── Utility classes ─── */
 .font-heading {
-  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: var(--font-barlow), 'Barlow', system-ui, sans-serif;
   font-weight: 800;
-  letter-spacing: -0.03em;
-  text-shadow: 0 0 40px rgba(0, 198, 215, 0.15);
+  letter-spacing: -0.02em;
 }
 
 .font-body {
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
 }
 
 .container-kawie {
@@ -154,7 +116,21 @@
   padding: 0 24px;
 }
 
-/* ─── Scroll reveal ─── */
+.section-pad {
+  padding: 96px 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 16px;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -166,172 +142,157 @@
   transform: translateY(0);
 }
 
-/* ─── Cards ─── */
 .kawie-card {
-  background: #0f1526;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 14px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   padding: 32px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 24px rgba(15, 37, 87, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .kawie-card:hover {
-  border-color: rgba(0, 198, 215, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(15, 37, 87, 0.1);
+  border-color: rgba(15, 37, 87, 0.12);
 }
 
 .card-hover {
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-hover:hover {
-  transform: translateY(-3px);
-}
-
-/* ─── Button styles ─── */
-.btn-primary {
-  display: inline-flex;
+.icon-tile {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  background: #00c6d7;
-  color: #080b14;
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-  white-space: nowrap;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  opacity: 0.88;
-}
-
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: #ffffff;
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 11px 28px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
-  white-space: nowrap;
-}
-
-.btn-ghost:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.4);
-  opacity: 0.88;
-}
-
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #25d366;
-  color: #ffffff;
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-  white-space: nowrap;
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-  opacity: 0.88;
-}
-
-/* ─── Section eyebrows ─── */
-.eyebrow {
-  display: inline-block;
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #00c6d7;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
-/* ─── Section ─── */
-.section-pad {
-  padding: 90px 0;
+.icon-tile-navy {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.btn-primary-navy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--navy);
+  color: #ffffff;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary-navy:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.btn-primary-cyan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--cyan);
+  color: var(--navy);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary-cyan:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.btn-ghost-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--navy);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 11px 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 37, 87, 0.2);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-ghost-outline:hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 37, 87, 0.35);
+}
+
+.btn-ghost-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 11px 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-ghost-white:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.section-alt {
+  background: var(--white);
 }
 
 .landing-page .section-wrap-odd > section {
-  background: var(--section-odd) !important;
+  background: var(--bg) !important;
 }
 
 .landing-page .section-wrap-even > section {
-  background: var(--section-even) !important;
+  background: var(--white) !important;
 }
 
-/* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--surface-2);
+  background: rgba(15, 37, 87, 0.15);
   border-radius: 3px;
-}
-
-/* FORCE READABILITY OVERRIDES */
-body {
-  font-size: 17px !important;
-  line-height: 1.8 !important;
-  color: #dde3f0 !important;
-}
-
-p {
-  font-size: 16px !important;
-  line-height: 1.85 !important;
-  color: #c8d0e0 !important;
-}
-
-h1 { color: #ffffff !important; }
-h2 { color: #ffffff !important; font-size: clamp(34px, 4vw, 54px) !important; }
-h3 { color: #ffffff !important; font-size: 20px !important; font-weight: 600 !important; }
-h4 { color: #ffffff !important; font-size: 16px !important; }
-
-li { font-size: 15px !important; color: #c8d0e0 !important; line-height: 1.9 !important; }
-span { color: inherit !important; }
-label { font-size: 14px !important; color: #c8d0e0 !important; }
-
-/* CARDS */
-[class*="card"], [class*="Card"] {
-  padding: 32px !important;
-}
-
-/* SECTION SPACING */
-section {
-  padding-top: 96px !important;
-  padding-bottom: 96px !important;
-}
-
-.eyebrow {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.2em !important;
-  color: #00c6d7 !important;
-  text-transform: uppercase !important;
 }

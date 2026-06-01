@@ -1,91 +1,40 @@
-const industries = [
-  {
-    icon: '🛢️',
-    name: 'Oil & Gas',
-    description:
-      'Offshore & onshore projects. PETRONAS-audit-ready. Certificate compliance. Crew rotation. Full SCM procurement chain.',
-  },
-  {
-    icon: '🏗️',
-    name: 'Construction & Services',
-    description:
-      'Project cost tracking, workforce deployment, materials procurement — all in one structured system.',
-  },
-  {
-    icon: '🚢',
-    name: 'Offshore & Shipping',
-    description:
-      'Manning compliance, rotation schedules, vessel-level procurement, and multi-client operations.',
-  },
-  {
-    icon: '🏢',
-    name: 'Workforce Operations',
-    description:
-      'HRIS, contract lifecycle, training matrix, and payroll costing for any multi-project operator.',
-  },
-  {
-    icon: '🏪',
-    name: 'SMEs & Beyond',
-    description:
-      'Lightweight, cloud-native, affordable. Enterprise-grade discipline without enterprise-grade cost.',
-  },
+import {
+  Flame,
+  HardHat,
+  Anchor,
+  Building2,
+  Store,
+  type LucideIcon,
+} from 'lucide-react'
+
+const industries: { icon: LucideIcon; name: string }[] = [
+  { icon: Flame, name: 'Oil & Gas' },
+  { icon: HardHat, name: 'Construction & Services' },
+  { icon: Anchor, name: 'Offshore & Shipping' },
+  { icon: Building2, name: 'Workforce Operations' },
+  { icon: Store, name: 'SMEs & Beyond' },
 ]
 
 export default function Industries() {
   return (
-    <section id="industries" className="section-pad" style={{ background: 'var(--bg)' }}>
+    <section id="industries" className="section-pad">
       <div className="container-kawie">
-        {/* Header */}
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div className="reveal text-center mb-14">
           <span className="eyebrow">Industry Verticals</span>
-          <h2
-            className="font-heading"
-            style={{ fontSize: 'clamp(28px, 4vw, 48px)', color: '#ffffff', marginBottom: '16px' }}
-          >
-            Designed for O&amp;G. Built for any sector.
-          </h2>
-          <p
-            style={{
-              fontFamily: 'var(--font-dm-sans)',
-              fontSize: '15px',
-              color: 'var(--text-secondary)',
-              lineHeight: 1.65,
-              maxWidth: '560px',
-              margin: '0 auto',
-            }}
-          >
-            UEOS was stress-tested in the most demanding environment — offshore Oil &amp; Gas. That
-            rigour is now available to every industry.
-          </p>
+          <h2 className="font-heading">Designed for O&amp;G. Built for any sector.</h2>
         </div>
 
-        {/* Cards */}
         <div
-          className="reveal"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '16px',
-          }}
+          className="grid gap-4"
+          data-stagger
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))' }}
         >
           {industries.map((ind) => (
-            <div key={ind.name} className="card-hover kawie-card" style={{ cursor: 'default' }}>
-              <div style={{ fontSize: '28px', marginBottom: '14px' }}>{ind.icon}</div>
-              <h3
-                className="font-heading"
-                style={{
-                  fontSize: '15px',
-                  color: '#ffffff',
-                  marginBottom: '10px',
-                  letterSpacing: '-0.02em',
-                  fontWeight: 700,
-                }}
-              >
-                {ind.name}
-              </h3>
-              <p className="text-[15px] text-[#c8d0e0] leading-relaxed">
-                {ind.description}
-              </p>
+            <div key={ind.name} className="reveal kawie-card text-center">
+              <div className="icon-tile icon-tile-navy mx-auto">
+                <ind.icon size={26} strokeWidth={1.75} aria-hidden />
+              </div>
+              <h3 className="text-base">{ind.name}</h3>
             </div>
           ))}
         </div>
