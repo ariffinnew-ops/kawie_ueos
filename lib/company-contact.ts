@@ -1,5 +1,6 @@
 export const COMPANY = {
   homeUrl: "https://kawie-digital.com/home",
+  aboutUrl: "https://kawie-digital.com/home#about",
   emailAdmin: "admin@kawie-digital.com",
   emailInquiry: "inquiry@kawie-digital.com",
   address: {
@@ -12,4 +13,5 @@ export const COMPANY = {
   trainingEmail: "admin@ayerspot.com",
   contactUrl: "https://kawie-digital.com/home/contact",
   demoUrl: "https://kawie-digital.com/home/contact?service=UEOS%20Platform%20Demo",
+  trainingUrl: "https://kawie-digital.com/home#training",
 }

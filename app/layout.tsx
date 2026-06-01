@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Barlow, Inter } from 'next/font/google'
+import { Barlow, Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -12,8 +12,15 @@ const barlow = Barlow({
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-jetbrains-mono',
   display: 'swap',
 })
 
@@ -35,7 +42,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${barlow.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${barlow.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <body className="antialiased font-body bg-[#f8faff] text-[#4a5578]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

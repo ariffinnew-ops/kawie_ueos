@@ -1,13 +1,6 @@
-import {
-  Flame,
-  HardHat,
-  Anchor,
-  Building2,
-  Store,
-  type LucideIcon,
-} from 'lucide-react'
+import { Flame, HardHat, Anchor, Building2, Store } from 'lucide-react'
 
-const industries: { icon: LucideIcon; name: string }[] = [
+const industries = [
   { icon: Flame, name: 'Oil & Gas' },
   { icon: HardHat, name: 'Construction & Services' },
   { icon: Anchor, name: 'Offshore & Shipping' },
@@ -17,24 +10,27 @@ const industries: { icon: LucideIcon; name: string }[] = [
 
 export default function Industries() {
   return (
-    <section id="industries" className="section-pad">
+    <section id="industries" className="section-light section-pad scroll-mt-20">
       <div className="container-kawie">
-        <div className="reveal text-center mb-14">
+        <div className="reveal section-header">
           <span className="eyebrow">Industry Verticals</span>
           <h2 className="font-heading">Designed for O&amp;G. Built for any sector.</h2>
+          <p className="mt-3 max-w-[560px] mx-auto text-center">
+            UEOS was stress-tested in offshore Oil &amp; Gas — that rigour now serves every
+            industry vertical.
+          </p>
         </div>
-
         <div
-          className="grid gap-4"
+          className="grid gap-3 reveal"
           data-stagger
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))' }}
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}
         >
           {industries.map((ind) => (
-            <div key={ind.name} className="reveal kawie-card text-center">
-              <div className="icon-tile icon-tile-navy mx-auto">
-                <ind.icon size={26} strokeWidth={1.75} aria-hidden />
+            <div key={ind.name} className="reveal kawie-card text-center py-4">
+              <div className="icon-tile icon-tile-navy mx-auto mb-2">
+                <ind.icon size={20} strokeWidth={1.75} aria-hidden />
               </div>
-              <h3 className="text-base">{ind.name}</h3>
+              <h3 className="text-sm">{ind.name}</h3>
             </div>
           ))}
         </div>

@@ -41,7 +41,7 @@ export default function ProblemBand() {
   return (
     <section className="section-pad">
       <div className="container-kawie">
-        <div className="reveal text-center mb-14">
+        <div className="reveal section-header">
           <span className="eyebrow">The Challenge</span>
           <h2 className="font-heading max-w-[600px] mx-auto">
             Fragmented systems are costing you money.
@@ -49,17 +49,17 @@ export default function ProblemBand() {
         </div>
 
         <div
-          className="grid gap-5"
+          className="grid gap-2"
           data-stagger
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}
         >
           {problems.map((p) => (
             <div key={p.title} className="reveal kawie-card">
               <div className="icon-tile icon-tile-navy">
-                <p.icon size={26} strokeWidth={1.75} aria-hidden />
+                <p.icon size={22} strokeWidth={1.75} aria-hidden />
               </div>
-              <h3 className="mb-3">{p.title}</h3>
-              <p>{p.description}</p>
+              <h3 className="mb-1 text-base">{p.title}</h3>
+              <p className="text-sm text-clamp-2">{p.description}</p>
             </div>
           ))}
         </div>

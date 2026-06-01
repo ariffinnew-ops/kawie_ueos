@@ -10,32 +10,32 @@ const links = [
   { label: 'Industries', href: '#industries' },
   { label: 'Training', href: '#training' },
   { label: 'Contact', href: '#contact' },
-]
+] as const
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-[100] bg-white border-b border-[rgba(15,37,87,0.08)]">
-      <div className="container-kawie flex items-center justify-between h-16">
-        <a href={COMPANY.homeUrl} className="flex items-center gap-3 no-underline min-w-0">
+      <div className="container-kawie flex items-center justify-between h-14">
+        <a href={COMPANY.homeUrl} className="flex items-center gap-2.5 no-underline min-w-0">
           <Image
             src="/kawie-logo.jpg"
             alt="Kawie Digital Solutions"
-            width={40}
-            height={40}
+            width={34}
+            height={34}
             className="rounded-lg shrink-0"
             priority
           />
           <span
             className="hidden sm:block font-heading text-[#0f2557] leading-tight"
-            style={{ fontWeight: 700, fontSize: 16 }}
+            style={{ fontWeight: 700, fontSize: 15 }}
           >
             Kawie Digital Solutions
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.label}
@@ -50,11 +50,11 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href={COMPANY.contactUrl}
-            className="inline-flex items-center justify-center font-body font-medium text-base text-white no-underline transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center font-body font-medium text-sm text-white no-underline transition-all duration-200 hover:opacity-90"
             style={{
               background: '#0f2557',
               borderRadius: 999,
-              padding: '10px 22px',
+              padding: '8px 18px',
             }}
           >
             Talk to Us
@@ -106,7 +106,7 @@ export default function Navbar() {
             style={{
               background: '#0f2557',
               borderRadius: 999,
-              padding: '10px 22px',
+              padding: '8px 18px',
             }}
           >
             Talk to Us

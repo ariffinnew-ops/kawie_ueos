@@ -77,31 +77,31 @@ export default function Modules() {
   return (
     <section id="modules" className="section-pad">
       <div className="container-kawie">
-        <div className="reveal text-center mb-14">
+        <div className="reveal section-header">
           <span className="eyebrow">Core Modules</span>
           <h2 className="font-heading">Four engines. One platform.</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5" data-stagger>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2" data-stagger>
           {modules.map((mod) => (
             <div key={mod.abbr} id={mod.id} className="reveal kawie-card">
               <div
-                className="icon-tile mb-4"
+                className="icon-tile mb-2"
                 style={{ background: `${mod.color}18`, color: mod.color }}
               >
-                <mod.icon size={26} strokeWidth={1.75} aria-hidden />
+                <mod.icon size={20} strokeWidth={1.75} aria-hidden />
               </div>
               <span
-                className="inline-block text-xs font-bold tracking-wider mb-2"
+                className="inline-block text-xs font-bold tracking-wider mb-0.5"
                 style={{ color: mod.color }}
               >
                 {mod.abbr}
               </span>
-              <h3 className="mb-3 text-lg">{mod.full}</h3>
-              <p className="text-sm mb-6">{mod.description}</p>
-              <ul className="list-none flex flex-col gap-2">
+              <h3 className="mb-1 text-base">{mod.full}</h3>
+              <p className="text-sm mb-2 text-clamp-2">{mod.description}</p>
+              <ul className="feature-list">
                 {mod.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-[15px] text-[#4a5578]">
+                  <li key={f}>
                     <span style={{ color: mod.color }} className="shrink-0">
                       →
                     </span>
