@@ -60,7 +60,7 @@ export default function Footer() {
           </p>
           <Image
             src="/ayerspot%20logo.png"
-            alt="Cyber9HUB @ Ayerspot"
+            alt="Purple-Ayerspot@Cyber9HUB Training Space"
             width={140}
             height={48}
             className="mt-2 h-10 w-auto object-contain object-left"

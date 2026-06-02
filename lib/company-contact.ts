@@ -9,7 +9,7 @@ export const COMPANY = {
     line3: "Bestari Cyber 9 Cyberjaya,",
     line4: "63000 Sepang, Selangor.",
   },
-  trainingVenue: "Cyber9HUB @ Ayerspot",
+  trainingVenue: "Purple-Ayerspot@Cyber9HUB Training Space",
   trainingEmail: "admin@ayerspot.com",
   contactUrl: "https://kawie-digital.com/home/contact",
   demoUrl: "https://kawie-digital.com/home/contact?service=UEOS%20Platform%20Demo",

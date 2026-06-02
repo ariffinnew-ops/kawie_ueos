@@ -156,7 +156,7 @@ export default function ContactCards() {
         <div>
           <h3 className="text-xl text-white font-semibold mb-1.5">UEOS-APOG Training</h3>
           <p className="font-sans text-[15px] text-[#c8d0e0] leading-relaxed">
-            Operator training program. Venue: Cyber9HUB @ Ayerspot, Cyberjaya.
+            Operator training program. Venue: Purple-Ayerspot@Cyber9HUB Training Space, Cyberjaya.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export default function ContactCards() {
           </div>
           <div className="flex items-center gap-2 font-sans text-base text-[#c8d0e0]">
             <span>&#128205;</span>
-            <span>Venue: Cyber9HUB @ Ayerspot</span>
+            <span>Venue: Purple-Ayerspot@Cyber9HUB Training Space</span>
           </div>
         </div>
 
