@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'UEOS — Unified Enterprise Operating System',
     description: 'Built for Oil & Gas. Ready for Every Industry.',

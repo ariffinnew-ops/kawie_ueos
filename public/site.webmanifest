@@ -1,0 +1,20 @@
+{
+  "name": "UEOS — Unified Enterprise Operating System | Kawie Digital",
+  "short_name": "UEOS",
+  "description": "One platform that consolidates project management, crew operations, and supply chain into a single, always-on cloud system — built for Oil & Gas, ready for every industry.",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0a0c10",
+  "background_color": "#0a0c10",
+  "display": "standalone"
+}
